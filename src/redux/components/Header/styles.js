@@ -22,8 +22,6 @@ export const StyledHeaderLogoImg = styled.img`
 // nav 태그
 export const StyledNav = styled.nav`
     width: 800px;
-    height: 50px;
-    /* background-color: #fffaf2; */
     margin-left: 60px;
 `;
 
@@ -39,11 +37,18 @@ export const StyledUl = styled.ul`
 
 // li 태그
 export const StyledLi = styled.li`
+
     display: inline;
     padding: 0 20px;
 
-    font-size: medium;
+    font-size: large;
     font-weight: bold;
+
+    &:hover {
+        border-radius: 10px;
+        background-color: #e7b5f7;
+        
+    }
 
     cursor: pointer;
 `;
