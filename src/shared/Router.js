@@ -6,8 +6,10 @@ import Main from "../pages/Main"
 import Hobby from "../pages/Hobby";
 import Life from "../pages/Life";
 import Detail from "../pages/Detail";
+import Post from "../pages/Post"
 import Relationship from "../pages/Relationship";
 import Header from "../redux/components/Header/Header"
+
 
 
 // 2. Router 라는 함수를 만들고 아래와 같이 작성합니다.
@@ -30,6 +32,7 @@ const Router = () => {
       <Route path="relationship" element={<Relationship/>} />
       <Route path="family" element={<Family/>} />
       <Route path="hobby" element={<Hobby/>} />
+      <Route path="post" element={<Post/>} />
       <Route path="detail/:id" element={<Detail/>}/>
     </Routes>
   </BrowserRouter>
