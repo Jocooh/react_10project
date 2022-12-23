@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ModalBox from "./ModalBox";
 
 export default function Modal() {
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const modalHandle = () => {
+        setModalOpen(true);
+    };
+
     return (
         <StyledDiv>
-            <StyledButton>수정</StyledButton>
+            <StyledButton onClick={modalHandle}>수정</StyledButton>
+            {modalOpen && <ModalBox setModalOpen={setModalOpen} />}
             <StyledButton>삭제</StyledButton>
         </StyledDiv>
     );
