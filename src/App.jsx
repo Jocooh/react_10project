@@ -6,5 +6,3 @@ const App = () => {
 };
 
 export default App;
-
-// 유진등장
