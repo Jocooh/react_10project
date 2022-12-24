@@ -1,4 +1,5 @@
 import React from "react";
+
 // 1. react-router-dom을 사용하기 위해서 아래 API들을 import 합니다.
 import { BrowserRouter, Route, Routes, } from "react-router-dom";
 import Family from "../pages/Family";
@@ -42,3 +43,23 @@ const Router = () => {
 };
 
 export default Router;
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Detail from "../pages/Detail";
+import Main from '../pages/Main';
+import Post from '../pages/Post';
+import Header from "../redux/components/Header/Header";
+
+export default function Router() {
+    return (
+        <BrowserRouter>
+            <Header />
+            <Routes>
+                <Route path='/' element={<Main />} />
+                <Route path='/detail' element={<Detail />} />
+                <Route path='/post' element={<Post />} />
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
