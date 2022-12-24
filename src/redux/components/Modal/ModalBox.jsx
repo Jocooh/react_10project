@@ -12,6 +12,7 @@ import {
 export default function ModalBox({ setModalOpen }) {
     const closeModal = () => {
         setModalOpen(false);
+        document.body.style.overflow = "unset"; //모달창 클로즈 시 배경 스크롤 활성화
     };
 
     return (

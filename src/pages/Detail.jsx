@@ -1,10 +1,11 @@
 import React from "react";
-import Modal from "../redux/components/Modal/Modal";
+import Contents from '../redux/components/Detail/Contents';
 
 export default function Detail() {
     return (
         <div>
-            <Modal />
+            <Contents />
         </div>
     );
 }
+
