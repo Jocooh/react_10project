@@ -1,10 +1,18 @@
 import React from "react";
-import styled from "styled-components";
+import CommentList from './CommentList';
+import {
+    StyledCommentSection,
+    StyledCommentForm,
+    StyledCommentInput,
+    StyledPwtInput,
+    StyledCommentButton,
+} from "./styled";
 
 export default function Comment() {
     return (
         <StyledCommentSection>
             <h3 style={{ padding: "0 15px" }}>Comment</h3>
+            {/* input 태그와 button 태그 감싸는 Form 태그 */}
             <StyledCommentForm>
                 <StyledCommentInput
                     type='text'
@@ -16,49 +24,8 @@ export default function Comment() {
                 />
                 <StyledCommentButton>추가</StyledCommentButton>
             </StyledCommentForm>
+            {/* 지은: 요 밑에는 댓글 리스트가 들어오는 댓글리 스트 컴포넌트 */}
+            <CommentList />
         </StyledCommentSection>
     );
 }
-
-const StyledCommentSection = styled.section`
-    border: 1px solid black;
-    width: 820px;
-    min-height: 400px;
-    padding: 0 20px;
-    margin: 30px;
-`;
-
-const StyledCommentForm = styled.form`
-    margin: 0 10px;
-`;
-
-const StyledCommentInput = styled.input`
-    margin: 0 15px 0 0;
-    width: 400px;
-    height: 40px;
-    border-radius: 15px;
-    border: none;
-    padding-left: 10px;
-    background-color: rgba(234, 207, 243, 0.459);
-`;
-
-const StyledPwtInput = styled.input`
-    width: 170px;
-    height: 40px;
-    margin: 0 15px 0 0;
-    border-radius: 15px;
-    border: none;
-    padding-left: 10px;
-    background-color: rgba(234, 207, 243, 0.459);
-`;
-
-const StyledCommentButton = styled.button`
-    width: 70px;
-    height: 40px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    font-size: medium;
-    font-weight: bold;
-    background-color: rgba(234, 207, 243, 0.459);
-`;
