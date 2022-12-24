@@ -18,6 +18,7 @@ height: 40px;
 border-radius: 30%;
 position: relative;
 left: 80%;
+top: 50px;
 
 font-size: large;
 font-weight: bold;
@@ -29,12 +30,15 @@ font-weight: bold;
     }
 `
 
+export const SearNBtn = styled.div`
+height:100px`
+
 export const ListBox = styled.div`
-width : 1100px;
+width : 950px;
 height:200px;
 background-color: #f0d8f8;
 position: relative;
-left: 4%;
+left: 10%;
 font-size: 40px;
 align-items: center;
 display: flex;

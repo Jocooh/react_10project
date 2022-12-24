@@ -1,5 +1,5 @@
 import React from "react";
-import { ListBody, ListBox, ListBtn } from "./styles";
+import { ListBody, ListBox, ListBtn, SearNBtn } from "./styles";
 import { NavLink, useNavigate } from "react-router-dom";
 
 function Main() {
@@ -13,11 +13,13 @@ function Main() {
   const navigate = useNavigate()
   return <div>
   <ListBody>
-    <ListBtn onClick={()=> {navigate("/post");}}>글쓰기</ListBtn> <br/>
+    <SearNBtn>
+      <ListBtn onClick={()=> {navigate("/post");}}>글쓰기</ListBtn>
+    </SearNBtn>
+    
+     <br/>
 
     {articles.map((article) => { return (<ListBox key={article.id}><NavLink to ={`/detail/${article.id}`}   style={{color:"black", textDecoration: "none"}}>{article.title}</NavLink></ListBox>);}  )}
-
-
 
   </ListBody>
   </div>
