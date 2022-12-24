@@ -1,7 +1,12 @@
 import React from "react";
 
-function Detail() {
-  return <div>Detail</div>;
+import Contents from '../redux/components/Detail/Contents';
+
+export default function Detail() {
+    return (
+        <div>
+            <Contents />
+        </div>
+    );
 }
 
-export default Detail;
