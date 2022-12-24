@@ -23,6 +23,8 @@ export const StyledLine = styled.b`
     background-color: #9c9c9c;
 `;
 
+
+
 // PostDetail Css
 export const StyledSection = styled.section`
     /* width: 860px; */
@@ -48,54 +50,4 @@ export const StyledPostP = styled.p`
     padding: 20px;
 `;
 
-// Comment Css
-export const StyledCommentSection = styled.section`
-    /* width: 820px; */
-    min-height: 400px;
-    padding: 0 20px;
-    margin: 30px;
-`;
-
-export const StyledCommentForm = styled.form`
-    margin: 0 10px;
-`;
-
-export const StyledCommentInput = styled.input`
-    margin: 0 15px 0 0;
-    width: 400px;
-    height: 40px;
-    border-radius: 15px;
-    border: none;
-    padding-left: 10px;
-    background-color: rgba(234, 207, 243, 0.459);
-`;
-
-export const StyledPwtInput = styled.input`
-    width: 170px;
-    height: 40px;
-    margin-left: 10px;
-    border-radius: 15px;
-    border: none;
-    padding-left: 10px;
-    background-color: rgba(234, 207, 243, 0.459);
-`;
-
-// 지은 : 댓글 추가 버튼
-export const StyledCommentButton = styled.button`
-    width: 70px;
-    height: 40px;
-    float: right;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: medium;
-    font-weight: bold;
-    background-color: rgba(234, 207, 243, 0.459);
-    &:hover {
-        background-color: #e7b5f7;
-    }
-`;
-
-
-// Comment List Css
 
