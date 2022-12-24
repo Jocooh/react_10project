@@ -36,13 +36,21 @@ export const StyledUl = styled.ul`
 `;
 
 // li 태그
+
+export const StyledLi = styled.button`
+
 export const StyledLi = styled.li`
+
 
     display: inline;
     padding: 0 20px;
 
     font-size: large;
     font-weight: bold;
+
+
+    background-color:transparent;
+    border:none;
 
     &:hover {
         border-radius: 10px;
