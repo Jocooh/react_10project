@@ -3,9 +3,9 @@ import { TextArea } from "./styles";
 
 function UserInputTextarea() {
   return (
-    <>
+    <div style={{ display: "flex" }}>
       <TextArea type="textarea"></TextArea>
-    </>
+    </div>
   );
 }
 

@@ -1,3 +1,4 @@
+
 import React from "react";
 import UserInput from "../redux/components/post/UserInput";
 
@@ -25,3 +26,4 @@ function Post({}) {
 }
 
 export default Post;
+
