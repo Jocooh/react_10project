@@ -3,7 +3,7 @@ import styled from "styled-components";
 // 헤더
 export const StyledHeader = styled.div`
   width: 100%;
-  height: 143px;
+  height: 140px;
 
   background: #f0d8f8;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -16,13 +16,13 @@ export const StyledHeader = styled.div`
 
 // 헤더의 p태그
 export const StyledHeaderLogoImg = styled.img`
-  width: 150px;
+  width: 200px;
 `;
 
 // nav 태그
 export const StyledNav = styled.nav`
-  width: 800px;
-  margin-left: 60px;
+  width: 700px;
+  margin-left: 50px;
 `;
 
 // ul 태그
@@ -41,7 +41,7 @@ export const StyledLi = styled.button`
   display: inline;
   padding: 0 20px;
 
-  font-size: large;
+  font-size: 25px; // 카테고리 폰트 사이즈
   font-weight: bold;
 
   background-color: transparent;
