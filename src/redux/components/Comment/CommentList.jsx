@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import ModalBox from "../Modal/ModalBox";
+import ModalBox2 from '../Modal/ModalBox2';
 import { RiEditBoxLine, RiDeleteBinLine } from "react-icons/ri";
 import { StyledCommentLi } from "../Comment/styled";
 
@@ -40,7 +40,7 @@ export default function CommentList() {
                                 }}
                             />
                             {modalOpen && (
-                                <ModalBox setModalOpen={setModalOpen} />
+                                <ModalBox2 setModalOpen={setModalOpen} />
                             )}
                         </div>
                     );
