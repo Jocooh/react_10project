@@ -4,7 +4,6 @@ import Button from "../common/Button";
 import Input2 from "../common/Input2";
 import UserInputTextarea from "./UserInputTextarea";
 import { InputBody, InputBox, UserPassword } from "./styles";
-import { StyledBtn } from "../common/stylecommon";
 import Select from "./Select";
 
 function UserInput() {
