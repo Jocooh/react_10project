@@ -1,30 +1,57 @@
 import React, { useState } from "react";
 import Button from "../common/Button";
-// import Input from "../common/Input";
 import Input2 from "../common/Input2";
 import UserInputTextarea from "./UserInputTextarea";
 import { InputBody, InputBox, UserPassword } from "./styles";
 import Select from "./Select";
+import { v4 as uuidv4 } from "uuid";
+import { useDispatch, useSelector } from "react-redux";
+import { addTitle } from "../../modules/article";
 
 function UserInput() {
   const [title, setTitle] = useState("");
   const [userName, setUserName] = useState("");
+  const [category, setCategory] = useState(0); //select[0] = 카테고리를선택하세요
+  const [selected, setSelected] = useState(1);
+  const dispatch = useDispatch();
+  const useArticle = useSelector((state) => state.Article);
 
+  //user title작성
   const handleTitle = (e) => {
     setTitle(e.target.value);
   };
-
+  //user닉네임작성
   const handleUser = (e) => {
     setUserName(e.target.value);
-    console.log(e.target.value);
+  };
+
+  //카테고리 넘버 지정 함수
+  const handleSelected = (e) => {
+    setSelected(e.target.value);
+  };
+
+  // 글 저장 함수
+  const submitArticle = (e) => {
+    e.preventDefault();
+
+    const newTitle = {
+      title, //현재 title(state)
+      userName,
+      category: selected,
+      id: uuidv4(),
+    };
+
+    dispatch(addTitle(newTitle));
+    console.log(newTitle);
   };
 
   return (
     <>
-      <form>
+      <form onSubmit={submitArticle}>
         <InputBody>
           <InputBox>
-            <Select></Select>
+            <p>Selected:{selected}</p>
+            <Select onChange={handleSelected} value={selected}></Select>
             {/* title */}
             <Input2
               id="title"
@@ -50,10 +77,23 @@ function UserInput() {
           {/* 글작성 공간 */}
           <UserInputTextarea />
           <div>
-            <Button style={{ float: "right" }}>저장</Button>
+            <Button type="submit" style={{ float: "right" }}>
+              저장
+            </Button>
           </div>
         </InputBody>
       </form>
+      {/* <div>
+        {useArticle.map((item) => {
+          return (
+            <div
+              key={item.id}
+              title={item.title}
+              category={item.category}
+            ></div>
+          );
+        })}
+      </div> */}
     </>
   );
 }
