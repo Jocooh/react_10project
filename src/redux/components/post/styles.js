@@ -19,20 +19,21 @@ const InputBox = styled.div`
   padding: 25px;
   justify-content: space-around;
   width: 1000px;
-  margin: auto;
-`;
-
-const ColumnInput = styled.div`
-  display: flex;
-  flex-direction: column;
+  margin: 10px auto;
 `;
 
 const TextArea = styled.input`
-  width: 100%;
+  width: 720px;
   height: 250px;
-  margin: 20px auto;
   border-radius: 20px;
   background: #f9f4fa;
+  margin: auto;
 `;
 
-export { NoneArrow, InputBody, InputBox, ColumnInput, TextArea };
+const UserPassword = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export { NoneArrow, InputBody, InputBox, TextArea, UserPassword };
