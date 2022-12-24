@@ -1,4 +1,5 @@
-import "./App.css";
+
+import React from "react";
 import Router from "./shared/Router";
 
 function App() {
@@ -6,3 +7,4 @@ function App() {
 }
 
 export default App;
+
