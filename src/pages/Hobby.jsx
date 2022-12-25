@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Hobby() {
-  return (
-    <div>Hobby</div>
-  )
+  return <div>Hobby</div>;
 }
 
-export default Hobby
+export default Hobby;

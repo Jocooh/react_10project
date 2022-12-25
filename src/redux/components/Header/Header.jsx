@@ -3,15 +3,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
-    StyledHeader,
-    StyledLi,
-    StyledNav,
-    StyledUl,
-    StyledHeaderLogoImg,
+  StyledHeader,
+  StyledLi,
+  StyledNav,
+  StyledUl,
+  StyledHeaderLogoImg,
 } from "./styles";
 
 export default function Header() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <StyledHeader>
       <StyledHeaderLogoImg src="assets/Logo.png" />

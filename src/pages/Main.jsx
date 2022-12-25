@@ -23,7 +23,6 @@ function Main() {
 
     dispatch(changeTitle(detailTitle));
   };
-
   const navigate = useNavigate();
   return (
     <div>

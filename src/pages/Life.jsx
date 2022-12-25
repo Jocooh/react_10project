@@ -1,11 +1,7 @@
-import React from 'react'
-
+import React from "react";
 
 function Life() {
-
-  return (
-    <div>Life</div>
-  )
+  return <div>Life</div>;
 }
 
-export default Life
+export default Life;

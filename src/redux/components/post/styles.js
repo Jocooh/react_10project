@@ -22,7 +22,7 @@ const InputBox = styled.div`
   margin: 10px auto;
 `;
 
-const TextBody = styled.div``
+const TextBody = styled.div``;
 
 const TextArea = styled.input`
   width: 720px;

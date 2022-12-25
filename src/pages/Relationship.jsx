@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Relationship() {
-  return (
-    <div>Relationship</div>
-  )
+  return <div>Relationship</div>;
 }
 
-export default Relationship
+export default Relationship;
