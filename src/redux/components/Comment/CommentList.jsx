@@ -43,7 +43,7 @@ export default function CommentList() {
                   float: "right",
                 }}
               />
-              {modalOpen && <ModalBox setModalOpen={setModalOpen} />}
+              {modalOpen && <ModalBox2 setModalOpen={setModalOpen} />}
             </StyledCommentLiIcon>
           );
         })}
