@@ -1,17 +1,28 @@
 import React from "react";
 import { ListBody, ListBox, ListBtn, SearNBtn } from "./styles";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { changeTitle } from "../redux/modules/detail";
+import { useDispatch } from "react-redux";
 
 function Main() {
-  const articles = [
-    { id: 1, title: "test1" },
-    { id: 2, title: "test2" },
-    { id: 3, title: "test3" },
-    { id: 4, title: "test4" },
-    { id: 5, title: "test5" },
-    { id: 6, title: "test6" },
-  ];
+  const dispatch = useDispatch();
+  const articles = useSelector((state) => state.Article);
+  console.log(articles);
 
+  //이 주소를 해당 글의 route 주소로 하자.
+  const userAddress = articles.map((item) => {
+    return item.id;
+  });
+  console.log("유저주소", userAddress);
+
+  //타이틀 바꿔달라고 요청하자.
+  const handleUserAddress = () => {
+    const detailTitle = articles.map((item) => item.title);
+    console.log("디테일 타이틀", detailTitle);
+
+    dispatch(changeTitle(detailTitle));
+  };
   const navigate = useNavigate();
   return (
     <div>
@@ -34,6 +45,7 @@ function Main() {
               <NavLink
                 to={`/detail/${article.id}`}
                 style={{ color: "black", textDecoration: "none" }}
+                onClick={handleUserAddress}
               >
                 {article.title}
               </NavLink>
