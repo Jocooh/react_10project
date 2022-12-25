@@ -1,42 +1,66 @@
 import React, { useState } from "react";
 import Button from "../common/Button";
-// import Input from "../common/Input";
 import Input2 from "../common/Input2";
 import UserInputTextarea from "./UserInputTextarea";
 import { InputBody, InputBox, UserPassword } from "./styles";
 import Select from "./Select";
 import { TextArea } from "./styles";
+import { v4 as uuidv4 } from "uuid";
+import { useDispatch, useSelector } from "react-redux";
+import { addTitle } from "../../modules/article";
+
 
 function UserInput() {
   const [title, setTitle] = useState("");
   const [userName, setUserName] = useState("");
+  const [category, setCategory] = useState(0); //select[0] = 카테고리를선택하세요
+  const [selected, setSelected] = useState(1);
+  const dispatch = useDispatch();
+
   const [pwd, setPwd] = useState("");
   const [content, setContent] = useState("");
-
   const [mainList, setMainList] = useState([]);
 
 
-  const addItem = (event) =>{
-    event.preventDefault()
+  const useArticle = useSelector((state) => state.Article);
 
-    const newPlan = {
-      title: title,
-      name: userName,
-      content: content,
-      password: pwd,
+  //user title작성
+  const handleTitle = (e) => {
+    setTitle(e.target.value);
+  };
+  //user닉네임작성
+  const handleUser = (e) => {
+    setUserName(e.target.value);
+  };
+
+  //카테고리 넘버 지정 함수
+  const handleSelected = (e) => {
+    setSelected(e.target.value);
+  };
+
+  // 글 저장 함수
+  const submitArticle = (e) => {
+    e.preventDefault();
+
+    const newTitle = {
+      title, //현재 title(state)
+      userName,
+      category: selected,
+      id: uuidv4(),
     };
 
-    setMainList([...mainList, newPlan])
-    console.log(mainList)
+    dispatch(addTitle(newTitle));
+    console.log(newTitle);
+  };
 
-  }
 
   return (
     <>
-      <form>
+      <form onSubmit={submitArticle}>
         <InputBody>
           <InputBox>
-            <Select></Select>
+            <p>Selected:{selected}</p>
+            <Select onChange={handleSelected} value={selected}></Select>
             {/* title */}
             <Input2
               id="title"
@@ -72,7 +96,10 @@ function UserInput() {
     setContent(e.target.value);
   }} /> */}
           <div>
-            <Button onClick={addItem} style={{ float: "right" }}>저장</Button>
+
+            <Button type="submit" style={{ float: "right" }}>
+              저장
+
           </div>
         </InputBody>
       </form>

@@ -1,15 +1,15 @@
 import React from "react";
 import { NoneArrow } from "./styles";
 
-function Select() {
+function Select({ value, onChange }) {
   return (
     <div>
-      <NoneArrow>
-        <option value="">카테고리를 선택해주세요</option>
-        <option value="life">인생</option>
-        <option value="relationship">인간관계</option>
-        <option value="famili">가족</option>
-        <option value="hobby">취미</option>
+      <NoneArrow onChange={onChange} value={value}>
+        <option value="0">카테고리를 선택해주세요</option>
+        <option value="1">인생</option>
+        <option value="2">인간관계</option>
+        <option value="3">가족</option>
+        <option value="4">취미</option>
       </NoneArrow>
     </div>
   );
