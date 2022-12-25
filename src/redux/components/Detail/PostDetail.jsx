@@ -9,13 +9,12 @@ import { useParams } from "react-router-dom";
 // import { useParams } from "react-router-dom";
 
 import {
-    StyledSection,
-    StyledIconSpanDiv,
-    StyledPostBoxDiv,
-    StyledSpan,
-    StyledPostP,
+  StyledSection,
+  StyledIconSpanDiv,
+  StyledPostBoxDiv,
+  StyledSpan,
+  StyledPostP,
 } from "./styled";
-
 
 export default function PostDetail() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -62,3 +61,4 @@ const StyledSection = styled.section`
   margin: 30px;
 `;
 
+// 유진등장
