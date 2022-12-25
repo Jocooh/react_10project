@@ -13,6 +13,7 @@ function UserInput() {
   const [userName, setUserName] = useState("");
   const [category, setCategory] = useState(0); //select[0] = 카테고리를선택하세요
   const [selected, setSelected] = useState(1);
+
   const dispatch = useDispatch();
   const useArticle = useSelector((state) => state.Article);
 
@@ -83,17 +84,6 @@ function UserInput() {
           </div>
         </InputBody>
       </form>
-      {/* <div>
-        {useArticle.map((item) => {
-          return (
-            <div
-              key={item.id}
-              title={item.title}
-              category={item.category}
-            ></div>
-          );
-        })}
-      </div> */}
     </>
   );
 }
