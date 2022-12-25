@@ -21,12 +21,13 @@ const Router = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="life" element={<Life />} />
-          <Route path="relationship" element={<Relationship />} />
-          <Route path="family" element={<Family />} />
-          <Route path="hobby" element={<Hobby />} />
+          <Route path="/Life" element={<Life />} />
+          <Route path="/Relationship" element={<Relationship />} />
+          <Route path="/Family" element={<Family />} />
+          <Route path="/Hobby" element={<Hobby />} />
           <Route path="post" element={<Post />} />
           <Route path="detail/:id" element={<Detail />} />
+          <Route path="life/:id" element={<Detail />} />
         </Routes>
       </BrowserRouter>
     </>
