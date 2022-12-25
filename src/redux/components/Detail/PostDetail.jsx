@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { RiEditBoxLine, RiDeleteBinLine } from "react-icons/ri";
@@ -8,6 +7,15 @@ import ModalBox from "../Modal/ModalBox";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 // import { useParams } from "react-router-dom";
+
+import {
+    StyledSection,
+    StyledIconSpanDiv,
+    StyledPostBoxDiv,
+    StyledSpan,
+    StyledPostP,
+} from "./styled";
+
 
 export default function PostDetail() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -53,3 +61,4 @@ const StyledSection = styled.section`
   min-height: 400px;
   margin: 30px;
 `;
+
