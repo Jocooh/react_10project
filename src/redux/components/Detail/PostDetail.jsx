@@ -73,3 +73,5 @@ const StyledSection = styled.section`
   min-height: 400px;
   margin: 30px;
 `;
+
+// 유진 추가
