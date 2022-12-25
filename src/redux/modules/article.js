@@ -13,18 +13,22 @@ const initialState = [
   {
     id: uuidv4(),
     title: "11",
-    contents: "22",
+    userName: "22",
+    category: 1,
   },
   {
     id: uuidv4(),
     title: "33",
-    contents: "44",
+    userName: "44",
+    category: 2,
   },
 ];
 
 //reducers
 const Article = (state = initialState, action) => {
   switch (action.type) {
+    case ADD_TITLE:
+      return [...state, action.payload];
     default:
       return state;
   }
