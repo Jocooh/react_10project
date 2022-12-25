@@ -3,16 +3,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
-  StyledHeader,
-  StyledLi,
-  StyledNav,
-  StyledUl,
-  StyledHeaderLogoImg,
+    StyledHeader,
+    StyledLi,
+    StyledNav,
+    StyledUl,
+    StyledHeaderLogoImg,
 } from "./styles";
 
 export default function Header() {
-  const navigate = useNavigate();
-
+    const navigate = useNavigate();
   return (
     <StyledHeader>
       <StyledHeaderLogoImg src="assets/Logo.png" />
@@ -22,6 +21,7 @@ export default function Header() {
             onClick={() => {
               navigate("/");
             }}
+            id="0"
           >
             최신글
           </StyledLi>
@@ -29,6 +29,7 @@ export default function Header() {
             onClick={() => {
               navigate("/life");
             }}
+            id="1"
           >
             인생
           </StyledLi>
@@ -36,6 +37,7 @@ export default function Header() {
             onClick={() => {
               navigate("/relationship");
             }}
+            id="2"
           >
             인간관계
           </StyledLi>
@@ -43,6 +45,7 @@ export default function Header() {
             onClick={() => {
               navigate("/family");
             }}
+            id="3"
           >
             가족
           </StyledLi>
@@ -50,6 +53,7 @@ export default function Header() {
             onClick={() => {
               navigate("/hobby");
             }}
+            id="4"
           >
             취미
           </StyledLi>
