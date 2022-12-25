@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 
 
-
-export const ListBody = styled.div`
+//리스트 몸통
+export const ListBody = styled.div` 
     width : 1200px;
     height: auto;
     left:20%;
     position: absolute;
     background-color: beige;
 `
-
-export const ListBtn = styled.button`
+//글생성 버튼
+export const ListBtn = styled.button` 
 border:none;
 width: 120px;
 height: 40px;
@@ -29,11 +29,12 @@ font-weight: bold;
         
     }
 `
-
-export const SearNBtn = styled.div`
+//검색과 글생성 버튼이 있는 공간
+export const SearNBtn = styled.div` 
 height:100px`
 
-export const ListBox = styled.div`
+//리스트 박스(글 하나하나)
+export const ListBox = styled.div` 
 width : 950px;
 height:200px;
 background-color: #f0d8f8;

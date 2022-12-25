@@ -5,19 +5,31 @@ import Input2 from "../common/Input2";
 import UserInputTextarea from "./UserInputTextarea";
 import { InputBody, InputBox, UserPassword } from "./styles";
 import Select from "./Select";
+import { TextArea } from "./styles";
 
 function UserInput() {
   const [title, setTitle] = useState("");
   const [userName, setUserName] = useState("");
+  const [pwd, setPwd] = useState("");
+  const [content, setContent] = useState("");
 
-  const handleTitle = (e) => {
-    setTitle(e.target.value);
-  };
+  const [mainList, setMainList] = useState([]);
 
-  const handleUser = (e) => {
-    setUserName(e.target.value);
-    console.log(e.target.value);
-  };
+
+  const addItem = (event) =>{
+    event.preventDefault()
+
+    const newPlan = {
+      title: title,
+      name: userName,
+      content: content,
+      password: pwd,
+    };
+
+    setMainList([...mainList, newPlan])
+    console.log(mainList)
+
+  }
 
   return (
     <>
@@ -31,26 +43,36 @@ function UserInput() {
               placeholder="제목을 입력해주세요"
               width="400px"
               borderRadius="10px"
-              onChange={handleTitle}
+              onChange={(e) => {
+                setTitle(e.target.value)}}
             />
             {/*User & password  */}
             <UserPassword>
               <Input2
                 id="username"
                 placeholder="닉네임"
-                onChange={handleUser}
+                onChange={(e) => {
+                  setUserName(e.target.value)}}
               />
               <Input2
                 id="password"
                 placeholder="비밀번호를 입력해주세요"
                 type="password"
+                onChange={(e) => {
+                  setPwd(e.target.value);
+                }}
               />
             </UserPassword>
           </InputBox>
           {/* 글작성 공간 */}
-          <UserInputTextarea />
+          <TextArea type="textarea"  id="content" onChange={(e) => {
+    setContent(e.target.value);
+  }} ></TextArea>
+          {/* <UserInputTextarea id="content" onChange={(e) => {
+    setContent(e.target.value);
+  }} /> */}
           <div>
-            <Button style={{ float: "right" }}>저장</Button>
+            <Button onClick={addItem} style={{ float: "right" }}>저장</Button>
           </div>
         </InputBody>
       </form>
