@@ -42,38 +42,25 @@ export default function PostDetail() {
     <StyledSection>
       {/* 지은 : 제목, 내용 적힌 박스를 감싸는 div */}
       <StyledPostBoxDiv>
-        <blockquote>
-          <h3>{title}</h3>
-          {/* 지은 : 작성자, 시간, 수정&삭제 아이콘 부분 감싸는 div */}
-          <StyledIconSpanDiv>
-            <CgProfile />
-            <StyledSpan>{articles.userName}</StyledSpan>
-            <MdOutlineWatchLater />
-            <StyledSpan>22.12.24 13:00</StyledSpan>
-            <RiEditBoxLine
-              onClick={modalHandle}
-              style={{ cursor: "pointer", marginLeft: "30px" }}
-            />
-            <RiDeleteBinLine
-              onClick={modalHandle}
-              style={{ cursor: "pointer", marginLeft: "15px" }}
-            />
-            {modalOpen && <ModalBox setModalOpen={setModalOpen} />}
-          </StyledIconSpanDiv>
-          <StyledPostP>튜터님이 저희 팀원 해주세요....🤣</StyledPostP>
-        </blockquote>
+        <h3>{title}</h3>
+        {/* 지은 : 작성자, 시간, 수정&삭제 아이콘 부분 감싸는 div */}
+        <StyledIconSpanDiv>
+          <CgProfile />
+          <StyledSpan>{articles.userName}</StyledSpan>
+          <MdOutlineWatchLater />
+          <StyledSpan>22.12.24 13:00</StyledSpan>
+          <RiEditBoxLine
+            onClick={modalHandle}
+            style={{ cursor: "pointer", marginLeft: "30px" }}
+          />
+          <RiDeleteBinLine
+            onClick={modalHandle}
+            style={{ cursor: "pointer", marginLeft: "15px" }}
+          />
+          {modalOpen && <ModalBox setModalOpen={setModalOpen} />}
+        </StyledIconSpanDiv>
+        <StyledPostP>튜터님이 저희 팀원 해주세요....🤣</StyledPostP>
       </StyledPostBoxDiv>
     </StyledSection>
   );
 }
-
-const StyledSection = styled.section`
-  border: 1px solid black;
-  width: 860px;
-  min-height: 400px;
-  margin: 30px;
-`;
-
-// 유진 추가
-// devdev
-// dev
