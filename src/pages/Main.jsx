@@ -60,7 +60,7 @@ function Main() {
 
         <br />
 
-        {newlist.map((article) => {
+        {articles.map((article) => {
           return (
             <ListBox key={article.id}>
               <NavLink
