@@ -29,7 +29,7 @@ function Main() {
 
   const [newlist, setNewlist] = useState(null);
 
-  const fetchTodos = async () => { const { data } = await axios.get("http:/localhost:3001/posts");
+  const fetchTodos = async () => { const { data } = await axios.get("http://localhost:3000/posts");
     setNewlist(data);}
 
     useEffect(() => {
