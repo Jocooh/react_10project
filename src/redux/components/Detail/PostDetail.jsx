@@ -62,11 +62,3 @@ export default function PostDetail() {
     </StyledSection>
   );
 }
-
-const StyledSection = styled.section`
-  border: 1px solid black;
-  width: 860px;
-  min-height: 400px;
-  margin: 30px;
-`;
-Z;
