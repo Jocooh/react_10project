@@ -20,6 +20,7 @@ export default function PostDetail() {
   // 비밀번호 모달
   const [modalOpen, setModalOpen] = useState(false);
   const [title, setTitle] = useState("하...");
+  const [contents, setContents] = useState("");
 
   const articles = useSelector((state) => state.Article);
 
@@ -67,13 +68,10 @@ export default function PostDetail() {
   );
 }
 
-const StyledSection = styled.section`
-  border: 1px solid black;
-  width: 860px;
-  min-height: 400px;
-  margin: 30px;
-`;
-
-// 유진 추가
-// devdev
-// dev
+// const StyledSection = styled.section`
+//   border: 1px solid black;
+//   width: 860px;
+//   min-height: 400px;
+//   margin: 30px;
+// `;
+// 유진 - Identifier 'StyledSection' has already been declared. 라는 오류문구 떠서 styled.js로 옮김

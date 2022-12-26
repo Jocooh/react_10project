@@ -28,6 +28,13 @@ export const StyledSection = styled.section`
   /* width: 860px; */
   min-height: 400px;
   margin: 30px;
+
+  border: 1px solid black;
+  width: 860px;
+  min-height: 400px;
+  margin: 30px;
+  // 유진 - Identifier 'StyledSection' has already been declared.라는 오류 발생
+  // PostDetail.jsx파일의 StyledSection 변수선언부분 지우고 이쪽으로 옮김
 `;
 
 export const StyledIconSpanDiv = styled.div`

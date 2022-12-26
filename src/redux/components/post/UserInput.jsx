@@ -8,12 +8,14 @@ import { TextArea } from "./styles";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addTitle } from "../../modules/article";
+import { NavLink, useNavigate } from "react-router-dom"; // 유진
 
 function UserInput() {
   const [title, setTitle] = useState("");
   const [userName, setUserName] = useState("");
   const [category, setCategory] = useState(0); //select[0] = 카테고리를선택하세요
   const [selected, setSelected] = useState(1);
+
   const dispatch = useDispatch();
 
   const [pwd, setPwd] = useState("");
@@ -50,6 +52,8 @@ function UserInput() {
     dispatch(addTitle(newTitle));
     console.log(newTitle);
   };
+
+  const navigate = useNavigate(); // 유진 - 저장 클릭 시 페이지 이동
 
   return (
     <>
@@ -99,7 +103,11 @@ function UserInput() {
     setContent(e.target.value);
   }} /> */}
           <div>
-            <Button type="submit" style={{ float: "right" }}>
+            <Button
+              onClick={() => navigate("/detail/{id}")} // 유진 - 저장 클릭 시 해당 게시글 페이지로
+              type="submit"
+              style={{ float: "right" }}
+            >
               저장
             </Button>
           </div>

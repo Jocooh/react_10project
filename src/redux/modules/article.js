@@ -1,7 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 
+// 글작성페이지에서 제목쓰는 페이지
+
 //action value
 const ADD_TITLE = "ADD_TITLE";
+const ADD_CONTENTS = "ADD_CONTENTS";
 
 //action creator
 export const addTitle = (payload) => {
@@ -33,4 +36,5 @@ const Article = (state = initialState, action) => {
       return state;
   }
 };
+
 export default Article;
