@@ -15,6 +15,11 @@ export const addTitle = (payload) => {
   return { type: ADD_TITLE, payload };
 };
 
+export const addContents = (payload) => {
+  return { type: ADD_CONTENTS, payload };
+};
+// 유진 - addContents 생성
+
 export const submitArticle = (payload) => {
   return { type: SUBMIT_ARTICLE, payload };
 };

@@ -6,6 +6,7 @@ import { useState } from "react";
 import ModalBox from "../Modal/ModalBox";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 // import { useParams } from "react-router-dom";
 
@@ -19,7 +20,8 @@ import {
 
 export default function PostDetail() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [title, setTitle] = useState("하...");
+
+  const [title, setTitle] = useState("");
 
   const articles = useSelector((state) => state.Article);
 
@@ -34,6 +36,11 @@ export default function PostDetail() {
   const params = useParams();
   console.log("params", params);
 
+  // const fetchTodos = async () => {
+  //   const { data } = await axios.get("http://localhost:3001/detail");
+  //   setTitle(data); // 서버로부터 fetching한 데이터를 useState의 state로 set 합니다.
+  // };
+
   // const please = articles.map((item, i) => {
   //   return item.id === params ? setTitle(item.title) : "다시해라";
   // });
@@ -42,7 +49,7 @@ export default function PostDetail() {
     <StyledSection>
       <StyledPostBoxDiv>
         <StyledIconSpanDiv>
-          <h3>{title}</h3>
+          <div>{title}</div>
           <CgProfile />
           <StyledSpan>{articles.userName}</StyledSpan>
           <MdOutlineWatchLater />
