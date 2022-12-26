@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const InputBody = styled.div`
+  background: aliceblue;
   width: 1000px;
   margin: auto;
 `;
@@ -21,8 +22,6 @@ const InputBox = styled.div`
   width: 1000px;
   margin: 10px auto;
 `;
-
-const TextBody = styled.div``;
 
 const TextArea = styled.input`
   width: 720px;
