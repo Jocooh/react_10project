@@ -35,6 +35,7 @@ function Main() {
     useEffect(() => {
       fetchTodos();
     })
+    
     console.log(newlist)
 
 
