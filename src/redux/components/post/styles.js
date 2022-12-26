@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const InputBody = styled.div`
+  background: aliceblue;
   width: 1000px;
   margin: auto;
 `;

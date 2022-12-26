@@ -7,7 +7,6 @@ import Select from "./Select";
 import { TextArea } from "./styles";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
-import { addTitle, submitArticle } from "../../modules/article";
 import axios from "axios";
 // import axios from "axios";
 
@@ -44,7 +43,10 @@ function UserInput() {
   const submitHandler = (e) => {
     e.preventDefault();
     const arc = { title, userName, selected, pwd, content };
-    axios.post("http://localhost:3000/posts", arc).then(alert("완성"));
+    axios.post("http://localhost:3000/posts", arc).then(() => {
+      alert("업로드 완료");
+      window.location = "/";
+    });
   };
 
   return (
@@ -52,7 +54,6 @@ function UserInput() {
       <form onSubmit={submitHandler}>
         <InputBody>
           <InputBox>
-            <p>Selected:{selected}</p>
             <Select onChange={handleSelected} value={selected}></Select>
             {/* title */}
             <Input2

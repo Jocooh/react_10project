@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -11,6 +10,8 @@ import {
 } from "./styles";
 
 export default function Header() {
+  //list는 state에 저장된 값
+
   const navigate = useNavigate();
   return (
     <StyledHeader>
