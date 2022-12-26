@@ -18,9 +18,8 @@ export default function Comment() {
     const [comment, setComment] = useState({ comment: "" });
     // const [password, setPassword] = useState("");
 
-    const handleCommentChange = (event) => {      
-        setComment({...comment, comment: event.target.value });
-        // console.log(comment);
+    const handleCommentChange = (event) => {
+        setComment({ ...comment, comment: event.target.value });
     };
 
     // const handlePasswordChange = (event) => {
