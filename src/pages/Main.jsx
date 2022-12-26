@@ -48,6 +48,7 @@ function Main() {
                 onClick={handleUserAddress}
               >
                 {article.title}
+                <div>{article.date}</div>
               </NavLink>
             </ListBox>
           );

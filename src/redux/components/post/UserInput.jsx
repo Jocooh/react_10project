@@ -8,17 +8,19 @@ import { TextArea } from "./styles";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addTitle } from "../../modules/article";
+import axios from "axios";
 
 function UserInput() {
   const [title, setTitle] = useState("");
   const [userName, setUserName] = useState("");
   const [category, setCategory] = useState(0); //select[0] = 카테고리를선택하세요
   const [selected, setSelected] = useState(1);
+  const [mainList, setMainList] = useState([]);
   const dispatch = useDispatch();
 
   const [pwd, setPwd] = useState("");
   const [content, setContent] = useState("");
-  const [mainList, setMainList] = useState([]);
+
 
   const useArticle = useSelector((state) => state.Article);
 
@@ -36,20 +38,25 @@ function UserInput() {
     setSelected(e.target.value);
   };
 
+  const today = new Date()
+
   // 글 저장 함수
   const submitArticle = (e) => {
     e.preventDefault();
 
     const newTitle = {
-      title, //현재 title(state)
+      title, 
       userName,
+      content,
       category: selected,
+      date: today.toLocaleString(),
       id: uuidv4(),
     };
 
     dispatch(addTitle(newTitle));
     console.log(newTitle);
   };
+
 
   return (
     <>
