@@ -94,11 +94,7 @@ function UserInput() {
             }}
           ></TextArea>
           <div>
-            <Button
-              onClick={() => navigate("/detail/{id}")} // 유진 - 저장 클릭 시 해당 게시글 페이지로
-              type="submit"
-              style={{ float: "right" }}
-            >
+            <Button type="submit" style={{ float: "right" }}>
               저장
             </Button>
           </div>

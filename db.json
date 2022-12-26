@@ -1,5 +1,4 @@
 {
-
   "posts": [
     {
       "id": 1,
@@ -12,7 +11,16 @@
       "title": "살려주세여",
       "userName": "조성아",
       "category": 3
+    },
+    {
+      "title": "2",
+      "userName": "2",
+      "selected": "2",
+      "pwd": "2",
+      "content": "2",
+      "id": 3
     }
+  ],
   "comments": [
     {
       "id": 1,
