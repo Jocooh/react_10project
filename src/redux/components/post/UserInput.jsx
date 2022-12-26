@@ -8,6 +8,7 @@ import { TextArea } from "./styles";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addTitle, submitArticle } from "../../modules/article";
+import axios from "axios";
 // import axios from "axios";
 
 function UserInput() {
@@ -25,22 +26,30 @@ function UserInput() {
     setSelected(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  //post구버전인데 axios 안되면 써야할꺼같아서 넣어놓을꼐요!
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const arc = { title, userName, selected, pwd, content };
+
+  //   fetch("http://localhost:3000/posts", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(arc),
+  //   }).then(() => {
+  //     console.log("new article added");
+  //   });
+  // };
+
+  //**한번씩 이상할떄 있으면 port랑 저희 작업물 다 껐다가 다시 시작해주세요 **/
+  const submitHandler = (e) => {
     e.preventDefault();
     const arc = { title, userName, selected, pwd, content };
-
-    fetch("http://localhost:3000/posts", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(arc),
-    }).then(() => {
-      console.log("new article added");
-    });
+    axios.post("http://localhost:3000/posts", arc).then(alert("완성"));
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={submitHandler}>
         <InputBody>
           <InputBox>
             <p>Selected:{selected}</p>
