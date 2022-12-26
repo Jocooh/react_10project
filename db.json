@@ -2,8 +2,201 @@
   "posts": [
     {
       "id": 1,
+<<<<<<< Updated upstream
       "title": "json-server",
       "author": "typicode"
+=======
+      "title": "오늘 밤샘각",
+      "userName": "조성아",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "title": "살려주세여",
+      "userName": "조성아",
+      "category": 3
+    },
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      {
+        "title": "123",
+        "userName": "123",
+        "category": "2",
+        "id": "ab2d8249-1314-40ad-85a1-6bc88f8d1da3"
+      }
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      }
+    ],
+    [
+      {
+        "title": "123",
+        "userName": "345",
+        "category": "3",
+        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
+      },
+      {
+        "title": "ㅙㅠㅠㅛ",
+        "userName": "ㅁㅇㄴㄹ",
+        "category": "4",
+        "id": "ec6d75e2-f961-49cd-8d0e-f79e88951e53"
+      }
+    ],
+    {
+      "title": "sadf",
+      "userName": "asdf",
+      "selected": "3",
+      "pwd": "asdf",
+      "content": "asdf",
+      "id": 3
+    },
+    {
+      "title": "asdf",
+      "userName": "asdf",
+      "selected": 0,
+      "pwd": "asdf",
+      "content": "asdfads",
+      "id": 4
+    },
+    {
+      "title": "test",
+      "userName": "asdf",
+      "selected": "3",
+      "pwd": "asdf",
+      "content": "asdfads",
+      "id": 5
+    },
+    {
+      "title": "test",
+      "userName": "asdf",
+      "selected": "3",
+      "pwd": "asdf",
+      "content": "test",
+      "id": 6
+    },
+    {
+      "title": "test",
+      "userName": "asdf",
+      "selected": "3",
+      "pwd": "asdf",
+      "content": "test",
+      "id": 7
+>>>>>>> Stashed changes
     }
   ],
   "comments": [
