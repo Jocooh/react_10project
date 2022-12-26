@@ -11,6 +11,7 @@ export default function CommentList() {
     // 비밀번호 모달
     const [modalOpen, setModalOpen] = useState(false);
 
+
     const modalHandle = () => {
         comments.map((item) => {
             if (item.id === comments.id) {
@@ -60,4 +61,6 @@ export default function CommentList() {
             </ul>
         </>
     );
+
+  
 }

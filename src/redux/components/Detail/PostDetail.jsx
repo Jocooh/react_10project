@@ -38,6 +38,7 @@ export default function PostDetail() {
     //   return item.id === params ? setTitle(item.title) : "다시해라";
     // });
 
+
     return (
         <StyledSection>
             {/* 지은 : 제목, 내용 적힌 박스를 감싸는 div */}
@@ -63,4 +64,5 @@ export default function PostDetail() {
             </StyledPostBoxDiv>
         </StyledSection>
     );
+
 }

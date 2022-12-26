@@ -1,4 +1,18 @@
 {
+
+  "posts": [
+    {
+      "id": 1,
+      "title": "오늘 밤샘각",
+      "userName": "조성아",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "title": "살려주세여",
+      "userName": "조성아",
+      "category": 3
+    }
   "comments": [
     {
       "id": 1,

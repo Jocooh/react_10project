@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -11,6 +10,7 @@ import {
 } from "./styles";
 
 export default function Header() {
+
     const navigate = useNavigate();
     return (
         <StyledHeader>
@@ -66,4 +66,5 @@ export default function Header() {
             </StyledNav>
         </StyledHeader>
     );
+
 }
