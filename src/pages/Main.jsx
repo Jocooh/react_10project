@@ -36,7 +36,7 @@ function Main() {
       fetchTodos();
     })
     
-    console.log(newlist)
+   
 
 
   return (
