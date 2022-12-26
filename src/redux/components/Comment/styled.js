@@ -11,7 +11,6 @@ export const StyledCommentSection = styled.section`
 // 댓글 입력
 export const StyledCommentForm = styled.form`
   margin: 0 10px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;

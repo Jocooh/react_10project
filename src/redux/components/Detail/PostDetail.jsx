@@ -6,8 +6,6 @@ import { useState } from "react";
 import ModalBox from "../Modal/ModalBox";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-
 // import { useParams } from "react-router-dom";
 
 import {
@@ -19,14 +17,14 @@ import {
 } from "./styled";
 
 export default function PostDetail() {
+  // 비밀번호 모달
   const [modalOpen, setModalOpen] = useState(false);
-
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState("하...");
 
   const articles = useSelector((state) => state.Article);
 
   const titles = useSelector((state) => state);
-  console.log(titles);
+  // console.log(titles);
 
   const modalHandle = () => {
     setModalOpen(true);
@@ -34,12 +32,7 @@ export default function PostDetail() {
   };
 
   const params = useParams();
-  console.log("params", params);
-
-  // const fetchTodos = async () => {
-  //   const { data } = await axios.get("http://localhost:3001/detail");
-  //   setTitle(data); // 서버로부터 fetching한 데이터를 useState의 state로 set 합니다.
-  // };
+  // console.log("params", params);
 
   // const please = articles.map((item, i) => {
   //   return item.id === params ? setTitle(item.title) : "다시해라";
@@ -47,9 +40,11 @@ export default function PostDetail() {
 
   return (
     <StyledSection>
+      {/* 지은 : 제목, 내용 적힌 박스를 감싸는 div */}
       <StyledPostBoxDiv>
+        <h3>{title}</h3>
+        {/* 지은 : 작성자, 시간, 수정&삭제 아이콘 부분 감싸는 div */}
         <StyledIconSpanDiv>
-          <div>{title}</div>
           <CgProfile />
           <StyledSpan>{articles.userName}</StyledSpan>
           <MdOutlineWatchLater />

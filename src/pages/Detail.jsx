@@ -1,15 +1,13 @@
 import React from "react";
-import Contents from "../redux/components/post/UserInput";
+import Contents from "../redux/components/Detail/Contents";
 
-function Detail() {
+export default function Detail() {
   return (
-    <div>
+    <>
       <Contents />
-    </div>
+    </>
   );
 }
-
-export default Detail;
 
 // import React from "react";
 // import Contents from "../redux/components/Detail/Contents";

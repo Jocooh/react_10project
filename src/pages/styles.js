@@ -6,7 +6,6 @@ export const ListBody = styled.div`
   /* left: 50%; */
   /* position: absolute; */
   background-color: beige;
-
   margin: 0 auto 0 auto;
   display: flex;
   flex-direction: column;
@@ -21,17 +20,13 @@ export const ListBtn = styled.button`
   width: 150px;
   height: 60px;
   border-radius: 30px;
-
   /* position: relative; */
   /* left: 80%; */
-
   float: right; // 유진 - position: relative;, left: 80%; 설정 지우고 왼쪽정렬
   margin-right: 10%; // 유진 - 버튼 오른쪽 여백
   background-color: white;
-
   font-size: 25px;
   font-weight: bold;
-
   &:hover {
     background-color: #e7b5f7;
     cursor: pointer;
@@ -56,6 +51,5 @@ export const ListBox = styled.div`
   box-sizing: border-box;
   border-radius: 40px;
   margin: 20px;
-
   text-decoration: none;
 `;
