@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ListBody, ListBox, ListBtn, SearNBtn } from "./styles";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { changeTitle } from "../redux/modules/detail";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
+import axios from "axios";
 
 function Main() {
   const dispatch = useDispatch();
@@ -24,6 +26,18 @@ function Main() {
     dispatch(changeTitle(detailTitle));
   };
   const navigate = useNavigate();
+
+  const [newlist, setNewlist] = useState(null);
+
+  const fetchTodos = async () => { const { data } = await axios.get("http:/localhost:3001/posts");
+    setNewlist(data);}
+
+    useEffect(() => {
+      fetchTodos();
+    })
+    console.log(newlist)
+
+
   return (
     <div>
       <ListBody>

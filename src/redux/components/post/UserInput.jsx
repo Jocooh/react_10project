@@ -57,10 +57,17 @@ function UserInput() {
     console.log(newTitle);
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const arc = { title, userName, selected, pwd, content, date: today.toLocaleString(),  };
+    axios.post("http://localhost:3000/posts", arc).then(alert("완성"));
+  };
+
+
 
   return (
     <>
-      <form onSubmit={submitArticle}>
+      <form onSubmit={submitHandler}>
         <InputBody>
           <InputBox>
             <p>Selected:{selected}</p>
