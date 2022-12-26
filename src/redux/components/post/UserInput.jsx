@@ -8,7 +8,7 @@ import { TextArea } from "./styles";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addTitle, submitArticle } from "../../modules/article";
-import axios from "axios";
+// import axios from "axios";
 
 function UserInput() {
   const [title, setTitle] = useState("");
@@ -25,65 +25,22 @@ function UserInput() {
     setSelected(e.target.value);
   };
 
-  //###############json확인쫌 할께여
-
-  // //get
-  // const fetchTitle = async () => {
-  //   const { data } = await axios.get("http://localhost:3000/posts");
-  //   setNewArc(data);
-  // };
-
-  const handleAddArticle = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    const arc = { title, userName, selected, pwd, content };
 
-    const newTitle = {
-      title, //현재 title(state)
-      userName,
-      category: selected,
-      id: uuidv4(),
-    };
-    dispatch(addTitle(newTitle));
-    console.log("newtitle입니다", newTitle);
-    // dispatch(submitArticle(articles));
-    // console.log("articles입니다", newTitle);
+    fetch("http://localhost:3000/posts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(arc),
+    }).then(() => {
+      console.log("new article added");
+    });
   };
-
-  const articles = useSelector((state) => state.Article);
-  console.log(articles); // 새로운 글을 관리하는 state
-
-  // const [newarc, setNewArc] = useState(null);
-
-  const url = "http://localhost:3000/posts";
-  const data = articles;
-  const config = { "Content-Type": "application/json" };
-
-  // post
-  const submitArticle = async () => {
-    await axios
-      .post(url, data, config)
-      .then(() => {
-        console.log("완료");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    // setNewArc([...newarc, articles]);
-  };
-  useEffect(() => {
-    submitArticle();
-  });
-
-  // ** dispatch로 글 저장하는 함수
 
   return (
     <>
-      <form
-        onSubmit={(e) => {
-          handleAddArticle(e);
-          submitArticle(articles);
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <InputBody>
           <InputBox>
             <p>Selected:{selected}</p>
@@ -125,9 +82,6 @@ function UserInput() {
               setContent(e.target.value);
             }}
           ></TextArea>
-          {/* <UserInputTextarea id="content" onChange={(e) => {
-    setContent(e.target.value);
-   }} /> */}
           <div>
             <Button type="submit" style={{ float: "right" }}>
               저장
