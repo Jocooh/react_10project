@@ -34,6 +34,7 @@ export const ListBtn = styled.button`
 
   &:hover {
     background-color: #e7b5f7;
+    cursor: pointer;
   }
 `;
 

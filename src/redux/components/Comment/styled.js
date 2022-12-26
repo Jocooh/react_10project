@@ -17,6 +17,7 @@ export const StyledCommentForm = styled.form`
   align-items: center;
   flex-direction: row;
 `;
+
 // 댓글 입력 input
 export const StyledCommentInput = styled.input`
   /* margin: 0 15px 0 0; */ // 유진 - 간격 맞추려고 주석처리했습니다

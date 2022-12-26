@@ -1,4 +1,5 @@
 {
+
   "posts": [
     {
       "id": 1,
@@ -11,157 +12,24 @@
       "title": "살려주세여",
       "userName": "조성아",
       "category": 3
-    },
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [
-      {
-        "title": "123",
-        "userName": "123",
-        "category": "2",
-        "id": "ab2d8249-1314-40ad-85a1-6bc88f8d1da3"
-      }
-    ],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      }
-    ],
-    [
-      {
-        "title": "123",
-        "userName": "345",
-        "category": "3",
-        "id": "0723a2d4-35b0-4a04-859d-c20e27a79421"
-      },
-      {
-        "title": "ㅙㅠㅠㅛ",
-        "userName": "ㅁㅇㄴㄹ",
-        "category": "4",
-        "id": "ec6d75e2-f961-49cd-8d0e-f79e88951e53"
-      }
-    ]
-  ],
+    }
   "comments": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "comment": "some comment",
+      "password": 123456
+    },
+    {
+      "comment": "되는가",
+      "id": 3
+    },
+    {
+      "comment": "ㅇㅇ",
+      "id": 4
+    },
+    {
+      "comment": "들어가지????",
+      "id": 5
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
