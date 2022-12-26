@@ -7,24 +7,13 @@ import Select from "./Select";
 import { TextArea } from "./styles";
 // import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
-<<<<<<< HEAD
-import { addTitle } from "../../modules/article";
 import { NavLink, useNavigate } from "react-router-dom"; // 유진
-=======
 import axios from "axios";
-// import axios from "axios";
->>>>>>> c75f9d285ecf6e26250a3dbd99df435fe1e406d1
 
 function UserInput() {
   const [title, setTitle] = useState("");
   const [userName, setUserName] = useState("");
-<<<<<<< HEAD
-  const [category, setCategory] = useState(0); //select[0] = 카테고리를선택하세요
-  const [selected, setSelected] = useState(1);
-
-=======
   const [selected, setSelected] = useState(0);
->>>>>>> c75f9d285ecf6e26250a3dbd99df435fe1e406d1
   const dispatch = useDispatch();
 
   const [pwd, setPwd] = useState("");
