@@ -17,7 +17,51 @@
       "content": "aaaa",
       "date": "2022. 12. 27. 오후 6:03:23",
       "id": 2
+    },
+    {
+      "title": "ㅁㄴㅇ",
+      "userName": "ㅁㄴㅇㄹ",
+      "selected": 0,
+      "pwd": "asdf",
+      "content": "asdf",
+      "date": "2022. 12. 27. 오후 9:12:56",
+      "id": 3
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "id": "49ac5bcf-0749-4379-8044-c430126241ac",
+      "comment": "test",
+      "password": "test",
+      "date": "2022. 12. 27. 오후 7:53:09"
+    },
+    {
+      "id": "d0cfac03-fd0e-4175-8111-851066753884",
+      "postid": "1",
+      "comment": "test1",
+      "password": "test1",
+      "date": "2022. 12. 27. 오후 10:11:37"
+    },
+    {
+      "id": "971de6fa-bfa1-4c7b-9943-4c4962ae0176",
+      "postid": "3",
+      "comment": "test2",
+      "password": "test2",
+      "date": "2022. 12. 27. 오후 10:22:00"
+    },
+    {
+      "id": "edb725e2-152b-452c-9497-e2d460423d04",
+      "postid": "1",
+      "comment": "test2",
+      "password": "test2",
+      "date": "2022. 12. 27. 오후 10:28:13"
+    },
+    {
+      "id": "1b57d932-6129-4530-bd9e-ab04d859d2f7",
+      "postid": "2",
+      "comment": "test5",
+      "password": "test5",
+      "date": "2022. 12. 27. 오후 10:28:24"
+    }
+  ]
 }

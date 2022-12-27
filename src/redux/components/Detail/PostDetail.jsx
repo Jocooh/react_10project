@@ -39,11 +39,14 @@ export default function PostDetail() {
     console.log(title);
   }, []);
 
-  console.log(title)
 
   
 
-  const selectedDetail = title?.filter((item) =>  item.id == paramId.id)[0];
+  const selectedDetail = title?.filter((item) =>  item.id === Number(paramId.id))[0];
+  
+  console.log(typeof(selectedDetail?.id));
+
+  console.log(typeof(paramId?.id));
 
   console.log(selectedDetail);
 

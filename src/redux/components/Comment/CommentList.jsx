@@ -6,7 +6,9 @@ import { StyledCommentLi, StyledCommentDateSpan } from "../Comment/styled";
 import { StyledCommentLiIcon } from "../Comment/styled";
 // import axios from 'axios';
 
-export default function CommentList({ commentList }) {
+//selectedComments
+
+export default function CommentList({ selectedComments }) {
   // const comments = useSelector((state) => state.comments);
   //commentlist 들어오는것도 확인
   // 비밀번호 모달
@@ -14,7 +16,7 @@ export default function CommentList({ commentList }) {
   const [modalOpen, setModalOpen] = useState(false);
   const modalHandle = (id) => {
     // setModalOpen(true);
-    commentList?.map((item) => {
+    selectedComments?.map((item) => {
       console.log(item);
       return id === item.id ? setModalOpen(true) : console.log("응 아님");
       // console.log("map아이템", item); //id값이 알아서 찍힘
@@ -32,7 +34,7 @@ export default function CommentList({ commentList }) {
   return (
     <>
       <ul>
-        {commentList?.map((item) => {
+        {selectedComments?.map((item) => {
           return (
             // 유진 - 가로정렬하려고 div태그를 StyledCommentLiIcon으로 만들어서 import함!!
             <StyledCommentLiIcon key={item.id}>
@@ -57,7 +59,7 @@ export default function CommentList({ commentList }) {
                 }}
               />
               {modalOpen && (
-                <ModalBox2 commentList={item} setModalOpen={setModalOpen} />
+                <ModalBox2 selectedComments={item} setModalOpen={setModalOpen} />
               )}
             </StyledCommentLiIcon>
           );
