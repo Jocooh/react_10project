@@ -6,15 +6,19 @@ import { StyledCommentLi, StyledCommentDateSpan } from "../Comment/styled";
 import { StyledCommentLiIcon } from "../Comment/styled";
 // import axios from 'axios';
 
-export default function CommentList({ selectedComments, setCommentList }) {
+export default function CommentList({
+  commentList,
+  selectedComments,
+  setCommentList,
+}) {
   // const comments = useSelector((state) => state.comments);
   //commentlist 들어오는것도 확인
   // 비밀번호 모달
 
-//selectedComments
+  //selectedComments
 
   const [modalOpen, setModalOpen] = useState(false);
-  const modalHandle = (id) => {
+  const modalHandle = (id, password) => {
     // setModalOpen(true);
     selectedComments?.map((item) => {
       console.log(item);
@@ -61,7 +65,7 @@ export default function CommentList({ selectedComments, setCommentList }) {
               {modalOpen && (
                 <ModalBox2
                   setCommentList={setCommentList}
-                  selectedComments={item}
+                  commentList={item}
                   setModalOpen={setModalOpen}
                 />
               )}
