@@ -8,22 +8,22 @@ import { StyledCommentLiIcon } from "../Comment/styled";
 
 export default function CommentList({ commentList }) {
   // const comments = useSelector((state) => state.comments);
-
+  //commentlist 들어오는것도 확인
   // 비밀번호 모달
-  const [modalOpen, setModalOpen] = useState(false);
 
-  const modalHandle = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const modalHandle = (id) => {
+    // setModalOpen(true);
     commentList?.map((item) => {
       console.log(item);
-      console.log(commentList);
-      if (item.id === commentList.id) {
-        setModalOpen(true);
-        document.body.style.overflow = "hidden"; //모달창 오픈 시 배경 스크롤 비활성화
-      }
-      console.log("item", item.id);
-      console.log("commentList", commentList.id);
+      return id === item.id ? setModalOpen(true) : console.log("응 아님");
+      // console.log("map아이템", item); //id값이 알아서 찍힘
+      // document.body.style.overflow = "hidden"; //모달창 오픈 시 배경 스크롤 비활성화
     });
   };
+
+  // console.log("item아이디", item.id);
+  // console.log("commentList", commentList);
 
   // console.log(comments);
   // comments.filter((item) => item.password !== action.payload);
@@ -47,7 +47,9 @@ export default function CommentList({ commentList }) {
                 }}
               />
               <RiDeleteBinLine
-                onClick={modalHandle}
+                onClick={() => {
+                  return modalHandle(item.id);
+                }}
                 style={{
                   cursor: "pointer",
                   marginLeft: "15px",

@@ -25,18 +25,19 @@ export default function PostDetail() {
   const [modalOpen, setModalOpen] = useState(false);
   const [title, setTitle] = useState(""); // 유진 - 쓴 글에서 가져와야함
   const [contents, setContents] = useState(""); // 유진 - 쓴글에서
-  const fetchTitle = async () => {
-    const { data } = await axios.get("http://localhost:3001/posts");
-    setTitle(data);
-  }; // 유진
-  const fetchContents = async () => {
-    const { data } = await axios.get("http://localhost:3001/posts");
-    setContents(data);
-  }; // 유진
-  useEffect(() => {
-    fetchTitle();
-    fetchContents();
-  }, []);
+
+  // const fetchTitle = async () => {
+  //   const { data } = await axios.get("http://localhost:3001/posts");
+  //   setTitle(data);
+  // }; // 유진
+  // const fetchContents = async () => {
+  //   const { data } = await axios.get("http://localhost:3001/posts");
+  //   setContents(data);
+  // }; // 유진
+  // useEffect(() => {
+  //   fetchTitle();
+  //   fetchContents();
+  // }, []);
 
   const articles = useSelector((state) => state.Article);
 
@@ -60,11 +61,12 @@ export default function PostDetail() {
       {/* 지은 : 제목, 내용 적힌 박스를 감싸는 div */}
 
       <StyledPostBoxDiv>
-        <div>
+        <h3>{title}</h3>
+        {/* <div>
           {title?.map((item) => (
             <p key={item.id}></p>
           ))}
-        </div>
+        </div> */}
         {/* 지은 : 작성자, 시간, 수정&삭제 아이콘 부분 감싸는 div */}
         <StyledIconSpanDiv>
           <CgProfile />
@@ -82,10 +84,10 @@ export default function PostDetail() {
           {modalOpen && <ModalBox setModalOpen={setModalOpen} />}
         </StyledIconSpanDiv>
         <StyledPostP>
-          {contents?.map((item) => (
+          {/* {contents?.map((item) => (
             <p key={item.id}></p>
-          ))}
-          튜터님이 저희 팀원 해주세요....🤣{" "}
+          ))} */}
+          튜터님이 저희 팀원 해주세요....🤣
         </StyledPostP>
       </StyledPostBoxDiv>
     </StyledSection>
