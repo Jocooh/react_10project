@@ -1,32 +1,6 @@
 {
   "posts": [
-    {
-      "title": "인생아",
-      "userName": "인생아",
-      "selected": "1",
-      "pwd": "a;dlksfj",
-      "content": "ㅁㄴ아ㅣ러마ㅣㄴ;얾",
-      "date": "2022. 12. 27. 오전 10:34:47",
-      "id": 1
-    },
-    {
-      "title": "취미",
-      "userName": "취및추",
-      "selected": "4",
-      "pwd": "dkfjalks;fj",
-      "content": "ㅣㅏ얼하ㅣ;ㅁㄹ",
-      "date": "2022. 12. 27. 오전 10:35:00",
-      "id": 2
-    },
-    {
-      "title": "adsf",
-      "userName": "adsf",
-      "selected": "2",
-      "pwd": "adsf",
-      "content": "asdf",
-      "date": "2022. 12. 27. 오전 10:38:39",
-      "id": 3
-    }
+    
   ],
   "comments": [
     {
