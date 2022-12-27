@@ -20,10 +20,7 @@ export default function ModalBox2({
   comment,
   setCommentList,
 }) {
-  console.log(commentList.password); //123
-  const password = useSelector((state) => state.comments);
-
-  const dispatch = useDispatch();
+  //123
 
   const closeModal = () => {
     setModalOpen(false);
@@ -39,6 +36,7 @@ export default function ModalBox2({
 
   const deleteHandler = (e) => {
     e.preventDefault();
+    console.log(commentList);
     const passwordId = commentList.id;
     console.log(passwordId);
     if (confirmPassword === commentList.password) {
@@ -47,13 +45,14 @@ export default function ModalBox2({
         const { data } = axios
           .get("http://localhost:3000/comments")
           .then(() => {
-            setCommentList(data);
+            setCommentList(...setCommentList, data);
           });
       });
-    } else {
-      alert("응아님");
     }
   };
+  // } else {
+  //   alert("비밀번호 틀렸음");
+  // }
   //다시받아서 props set렌더링
   //1.state가 변경되는부분
   //2.props가 변경되는 부분

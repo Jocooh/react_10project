@@ -15,7 +15,7 @@ function Main() {
 
   const fetchList = async () => {
     const { data } = await axios.get(
-      "http://localhost:3001/posts?_sort=date&_order=desc"
+      "http://localhost:3000/posts?_sort=date&_order=desc"
     );
     setList(data);
   };
