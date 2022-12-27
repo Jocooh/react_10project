@@ -1,27 +1,29 @@
-import React from "react";
-import { isHtmlElement } from "react-router-dom";
-//dist/dom";
-import { v4 as uuidv4 } from "uuid";
+//detail 주석처리해놓을꼐요
 
-//////////////////////
+// import React from "react";
+// import { isHtmlElement } from "react-router-dom";
+// //dist/dom";
+// import { v4 as uuidv4 } from "uuid";
 
-const CHANGE_TITLE = "CHANGE_TITLE";
+// //////////////////////
 
-export const changeTitle = (paylaod) => {
-  return { type: CHANGE_TITLE, paylaod };
-};
+// const CHANGE_TITLE = "CHANGE_TITLE";
 
-const initialState = [];
+// export const changeTitle = (paylaod) => {
+//   return { type: CHANGE_TITLE, paylaod };
+// };
 
-const detail = (state = initialState, action) => {
-  switch (action.type) {
-    case CHANGE_TITLE:
-      return [...state, action.payload];
-    default:
-      return state;
-  }
-};
-export default detail;
+// const initialState = [];
+
+// const detail = (state = initialState, action) => {
+//   switch (action.type) {
+//     case CHANGE_TITLE:
+//       return [...state, action.payload];
+//     default:
+//       return state;
+//   }
+// };
+// export default detail;
 
 ////////////////////////////
 
