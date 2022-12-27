@@ -2,7 +2,6 @@ import React from "react";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { RiEditBoxLine, RiDeleteBinLine } from "react-icons/ri";
-import { useState } from "react";
 import ModalBox from "../Modal/ModalBox";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -12,8 +11,6 @@ import { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 // import Contents from "../redux/components/Detail/Contents";
 
-import axios from "axios";
-import { useEffect } from "react";
 
 import {
   StyledSection,

@@ -11,15 +11,26 @@ import { NavLink, useNavigate } from "react-router-dom"; // 유진
 import axios from "axios";
 
 function UserInput() {
-  const [title, setTitle] = useState("");
-  const [userName, setUserName] = useState("");
-  const [selected, setSelected] = useState(0);
-  const dispatch = useDispatch();
+    const [title, setTitle] = useState("");
+    const [userName, setUserName] = useState("");
+    const [selected, setSelected] = useState(0);
+    const dispatch = useDispatch();
 
-  const [pwd, setPwd] = useState("");
-  const [content, setContent] = useState("");
+    const [pwd, setPwd] = useState("");
+    const [content, setContent] = useState("");
 
-  const today = new Date();
+
+  const useArticle = useSelector((state) => state.Article);
+
+  // //user title작성
+  // const handleTitle = (e) => {
+  //     setTitle(e.target.value);
+  // };
+  // //user닉네임작성
+  // const handleUser = (e) => {
+  //     setUserName(e.target.value);
+  // };
+
   //카테고리 넘버 지정 함수
   const handleSelected = (e) => {
     setSelected(e.target.value);
@@ -45,36 +56,28 @@ function UserInput() {
   //   e.preventDefault();
   //   const arc = { title, userName, selected, pwd, content };
 
-  //   fetch("http://localhost:3000/posts", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(arc),
-  //   }).then(() => {
-  //     console.log("new article added");
-  //   });
-  // };
+    //   fetch("http://localhost:3000/posts", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(arc),
+    //   }).then(() => {
+    //     console.log("new article added");
+    //   });
+    // };
 
   //**한번씩 이상할떄 있으면 port랑 저희 작업물 다 껐다가 다시 시작해주세요 **/
+
   const submitHandler = (e) => {
     e.preventDefault();
-
-    const arc = {
-      title,
-      userName,
-      selected,
-      pwd,
-      content,
-      date: today.toLocaleString(),
-    };
-
-    axios.post("http://localhost:3000/posts", arc).then(() => {
-      alert("업로드 완료");
-      window.location = "/";
-    });
+    const arc = { title, userName, selected, pwd, content, date: today.toLocaleString(),  };
+    axios.post("http://localhost:3001/posts", arc).then(alert("완성"));
   };
 
-  return (
+
+
+   return (
     <>
+
       <form className="frm" onSubmit={submitHandler}>
         <InputBody>
           <InputBox>
@@ -128,5 +131,7 @@ function UserInput() {
       </form>
     </>
   );
-}
+          }
+
+
 export default UserInput;
