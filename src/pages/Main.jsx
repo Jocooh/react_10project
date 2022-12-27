@@ -16,6 +16,8 @@ function Main() {
   const [list, setList] = useState(null);
 
   const fetchList = async () => {
+
+
     const { data } = await axios.get(
       "http://localhost:3000/posts?_sort=date&_order=desc"
     );
