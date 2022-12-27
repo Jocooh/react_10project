@@ -37,9 +37,13 @@ export default function PostDetail() {
     console.log(title);
   }, []);
 
-  console.log(title);
+  const selectedDetail = title?.filter(
+    (item) => item.id === Number(paramId.id)
+  )[0];
 
-  const selectedDetail = title?.filter((item) => item.id == paramId.id)[0];
+  console.log(typeof selectedDetail?.id);
+
+  console.log(typeof paramId?.id);
 
   console.log(selectedDetail);
 
@@ -66,13 +70,17 @@ export default function PostDetail() {
       {/* 지은 : 제목, 내용 적힌 박스를 감싸는 div */}
 
       <StyledPostBoxDiv>
-        <h3 style={{ backgroundColor: "gray" }}>{selectedDetail?.title}</h3>
+        <h3>{selectedDetail?.title}</h3>
 
         <StyledIconSpanDiv>
           <CgProfile />
-          <StyledSpan>{selectedDetail?.userName}</StyledSpan>
-          <MdOutlineWatchLater />
-          <StyledSpan>{selectedDetail?.date}</StyledSpan>
+          <StyledSpan style={{ marginLeft: "5px" }}>
+            {selectedDetail?.userName}
+          </StyledSpan>
+          <MdOutlineWatchLater style={{ marginLeft: "15px" }} />
+          <StyledSpan style={{ marginLeft: "5px" }}>
+            {selectedDetail?.date}
+          </StyledSpan>
           <RiEditBoxLine
             onClick={modalHandle}
             style={{ cursor: "pointer", marginLeft: "30px" }}

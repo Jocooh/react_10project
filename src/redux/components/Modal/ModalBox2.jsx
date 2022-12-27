@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeComment } from "../../modules/comments";
@@ -13,10 +14,14 @@ import {
 } from "./styles2";
 
 // 댓글 수정, 삭제 눌렀을 때 뜨는 비밀번호 모달
-export default function ModalBox2({ setModalOpen, comment }) {
-  console.log(comment);
+export default function ModalBox2({
+  commentList,
+  setModalOpen,
+  comment,
+  setCommentList,
+}) {
+  console.log(commentList.password); //123
   const password = useSelector((state) => state.comments);
-  console.log(password);
 
   const dispatch = useDispatch();
 
@@ -32,19 +37,34 @@ export default function ModalBox2({ setModalOpen, comment }) {
     console.log(confirmPassword);
   };
 
-  const confirmPasswordSubmit = (event) => {
-    event.preventDefault();
-    if (confirmPassword === password) {
-      return dispatch(removeComment(comment.id));
+  const deleteHandler = (e) => {
+    e.preventDefault();
+    const passwordId = commentList.id;
+    console.log(passwordId);
+    if (confirmPassword === commentList.password) {
+      setModalOpen(false);
+      axios.delete(`http://localhost:3000/comments/${passwordId}`).then(() => {
+        const { data } = axios
+          .get("http://localhost:3000/comments")
+          .then(() => {
+            setCommentList(data);
+          });
+      });
+    } else {
+      alert("응아님");
     }
   };
+  //다시받아서 props set렌더링
+  //1.state가 변경되는부분
+  //2.props가 변경되는 부분
+  //3.부모컴포넌트가 변경되는 부분
 
   return (
     <StyledModalBg>
       <StyledModalContainer>
         <ModalCloseButton onClick={closeModal}>X</ModalCloseButton>
 
-        <StyledModalBox onClick={confirmPasswordSubmit}>
+        <StyledModalBox onSubmit={deleteHandler}>
           <ModalTitle>비밀번호를 입력해주세요.</ModalTitle>
           <ModalPwInput
             type="password"

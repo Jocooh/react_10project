@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addComment } from "../../modules/comments";
 import CommentList from "./CommentList";
+import { useParams } from "react-router-dom";
 import {
   StyledCommentSection,
   StyledCommentForm,
@@ -21,6 +22,8 @@ export default function Comment() {
 
   const [commentList, setCommentList] = useState(null);
 
+  const paramId = useParams();
+
   const fetchList = async () => {
     const { data } = await axios.get("http://localhost:3001/comments");
     setCommentList(data);
@@ -28,6 +31,10 @@ export default function Comment() {
   useEffect(() => {
     fetchList();
   }, []);
+
+
+  const selectedComments = commentList?.filter((item) => Number(item.postid) === Number(paramId.id));
+
   // comment 추가 버튼 누르면 댓글 추가되는 onsubmit 함수
   const handleCommentSubmit = (event) => {
     event.preventDefault();
@@ -39,6 +46,7 @@ export default function Comment() {
     const today = new Date();
     const cmt = {
       id: uuidv4(),
+      "postid": paramId.id,
       comment,
       password,
       date: today.toLocaleString(),
@@ -51,6 +59,10 @@ export default function Comment() {
       console.log(commentList);
     });
     console.log("comment에 있는 commentList", commentList);
+
+
+
+
     //     const newComment = {
     //         id: uuidv4(),
     //         comment: comment,
@@ -92,7 +104,7 @@ export default function Comment() {
         <StyledCommentButton>추가</StyledCommentButton>
       </StyledCommentForm>
       {/* 지은: 요 밑에는 댓글 리스트가 들어오는 댓글 리스트 컴포넌트 */}
-      <CommentList commentList={commentList} />
+      <CommentList selectedComments={selectedComments} commentList={commentList} />
     </StyledCommentSection>
   );
 }

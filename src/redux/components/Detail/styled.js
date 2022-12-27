@@ -28,14 +28,12 @@ export const StyledSection = styled.section`
   /* width: 860px; */
   min-height: 400px;
   margin: 30px;
-  background-color: beige;
 `;
 
 //게시글 사용자 이름, 아이콘, 시간, 시간아이콘, 수정삭제버튼
 export const StyledIconSpanDiv = styled.div`
   font-size: small;
   color: rgba(0, 0, 0, 0.5);
-  background-color: gray;
 `;
 
 export const StyledPostBoxDiv = styled.div`
