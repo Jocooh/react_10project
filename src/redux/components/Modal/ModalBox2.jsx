@@ -43,9 +43,9 @@ export default function ModalBox2({
     console.log(passwordId);
     if (confirmPassword === commentList.password) {
       setModalOpen(false);
-      axios.delete(`http://localhost:3000/comments/${passwordId}`).then(() => {
+      axios.delete(`http://localhost:3001/comments/${passwordId}`).then(() => {
         const { data } = axios
-          .get("http://localhost:3000/comments")
+          .get("http://localhost:3001/comments")
           .then(() => {
             setCommentList(data);
           });
