@@ -14,7 +14,7 @@ function Family() {
   const [list, setList] = useState(null);
 
   const fetchList = async () => {
-    const { data } = await axios.get("http://localhost:3000/posts?selected=3");
+    const { data } = await axios.get("http://localhost:3001/posts?selected=3");
     setList(data);
   };
 
