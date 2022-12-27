@@ -1,8 +1,23 @@
 {
   "posts": [
-   
+    {
+      "title": "test",
+      "userName": "test",
+      "selected": 0,
+      "pwd": "test",
+      "content": "tset",
+      "date": "2022. 12. 27. 오후 6:02:24",
+      "id": 1
+    },
+    {
+      "title": "aaa",
+      "userName": "aaa",
+      "selected": 0,
+      "pwd": "aaa",
+      "content": "aaaa",
+      "date": "2022. 12. 27. 오후 6:03:23",
+      "id": 2
+    }
   ],
-  "comments": [
-   
-  ]
+  "comments": []
 }

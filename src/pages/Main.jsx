@@ -48,8 +48,6 @@ function Main() {
             >
 
               {item.title}<br/>
-              {item.title}
-              <br />
 
               {item.date}
             </NavLink>
