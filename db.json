@@ -37,5 +37,26 @@
       "id": 4
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "id": "de0700fd-5d09-4ad2-b8d0-676a0c17fd7c",
+      "comment": "detail1의 1번째",
+      "password": "11",
+      "date": "2022. 12. 27. 오후 11:17:39"
+    },
+    {
+      "id": "aed7c420-f011-4eb2-bc8f-1b062f5bb532",
+      "postid": "1",
+      "comment": "디테일1번의 1번째 댓글",
+      "password": "11",
+      "date": "2022. 12. 27. 오후 11:28:28"
+    },
+    {
+      "id": "c06c9a7c-f8bd-4fc6-9104-8e943988885e",
+      "postid": "4",
+      "comment": "디테일4 1번째 댓글",
+      "password": "41",
+      "date": "2022. 12. 27. 오후 11:29:22"
+    }
+  ]
 }
