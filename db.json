@@ -35,6 +35,15 @@
       "content": "탈주각",
       "date": "2022. 12. 27. 오후 11:02:14",
       "id": 4
+    },
+    {
+      "title": "test1",
+      "userName": "test",
+      "selected": 0,
+      "pwd": "test",
+      "content": "test1",
+      "date": "2022. 12. 28. 오전 2:23:43",
+      "id": 5
     }
   ],
   "comments": [
@@ -71,6 +80,13 @@
       "comment": "3디테일 1번째 댓글",
       "password": "31",
       "date": "2022. 12. 27. 오후 11:30:50"
+    },
+    {
+      "id": "60fcc572-748c-4cab-8219-a42a9165e0a0",
+      "postid": "5",
+      "comment": "11",
+      "password": "11",
+      "date": "2022. 12. 28. 오전 2:23:54"
     }
   ]
 }

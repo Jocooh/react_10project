@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { removeComment } from "../../modules/comments";
+
 
 import {
   StyledModalBg,
@@ -48,6 +47,8 @@ export default function ModalBox2({
             setCommentList(...setCommentList, data);
           });
       });
+    } else {
+      alert("비밀번호를 다시 입력해주세요");
     }
   };
   // } else {
