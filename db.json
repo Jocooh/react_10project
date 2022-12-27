@@ -1,19 +1,21 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "ㅇ",
+      "userName": "ㅇ",
+      "selected": "1",
+      "pwd": "d",
+      "content": "d",
+      "date": "2022. 12. 27. 오전 11:10:40",
+      "id": 1
     }
   ],
   "comments": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "comment": "s",
+      "password": "s",
+      "date": "2022. 12. 27. 오전 11:13:28",
+      "id": 1
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

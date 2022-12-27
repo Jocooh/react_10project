@@ -9,10 +9,15 @@ function Input2({
   onChange,
   width,
   borderRadius,
+  required,
+  pattern,
+  maxLength,
 }) {
   return (
     <>
       <StyledInput
+        maxLength={20}
+        required={required}
         type={type}
         id={id}
         placeholder={placeholder}
