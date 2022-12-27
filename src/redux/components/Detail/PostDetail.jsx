@@ -7,9 +7,11 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 // import { useParams } from "react-router-dom";
 // import Contents from "../redux/components/Detail/Contents";
+
+
 
 
 import {
@@ -25,8 +27,6 @@ export default function PostDetail() {
   const [modalOpen, setModalOpen] = useState(false);
   const [title, setTitle] = useState(""); // 유진 - 쓴 글에서 가져와야함
   const [contents, setContents] = useState(""); // 유진 - 쓴글에서
-
-
 
   // const fetchTitle = async () => {
   //   const { data } = await axios.get("http://localhost:3001/posts");
@@ -64,6 +64,7 @@ export default function PostDetail() {
 
       <StyledPostBoxDiv>
       <h3>{title}</h3>
+        <h3>{title}</h3>
         {/* <div>
           {title?.map((item) => (
             <p key={item.id}></p>

@@ -14,7 +14,7 @@ function Hobby() {
   const [list, setList] = useState(null);
 
   const fetchList = async () => {
-    const { data } = await axios.get("http://localhost:3001/posts?selected=4");
+    const { data } = await axios.get("http://localhost:3000/posts?selected=4");
     setList(data);
   };
 
@@ -49,6 +49,8 @@ function Hobby() {
               style={{ color: "black", textDecoration: "none" }}
             >
               {item.title}
+              <br />
+              {item.date}
             </NavLink>
           </ListBox>
         ))}

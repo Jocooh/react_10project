@@ -46,7 +46,11 @@ function Main() {
               to={`/detail/${item.id}`}
               style={{ color: "black", textDecoration: "none" }}
             >
+
               {item.title}<br/>
+              {item.title}
+              <br />
+
               {item.date}
             </NavLink>
           </ListBox>
