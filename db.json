@@ -1,14 +1,45 @@
 {
-  "posts": [{}
+
+  "posts": [
+    {
+      "id": 1,
+      "title": "오늘 밤샘각",
+      "userName": "조성아",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "title": "살려주세여",
+      "userName": "조성아",
+      "category": 3
+    },
+    {
+      "title": "2",
+      "userName": "2",
+      "selected": "2",
+      "pwd": "2",
+      "content": "2",
+      "id": 3
+    }
+
   ],
   "comments": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "comment": "some comment",
+      "password": 123456
+    },
+    {
+      "comment": "되는가",
+      "id": 3
+    },
+    {
+      "comment": "ㅇㅇ",
+      "id": 4
+    },
+    {
+      "comment": "들어가지????",
+      "id": 5
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -19,10 +19,8 @@ const InputBox = styled.div`
   padding: 25px;
   justify-content: space-around;
   width: 1000px;
-  margin: 10px auto;
+  margin: 20px auto;
 `;
-
-const TextBody = styled.div``;
 
 const TextArea = styled.input`
   width: 720px;
@@ -30,6 +28,7 @@ const TextArea = styled.input`
   border-radius: 20px;
   background: #f9f4fa;
   margin: auto;
+  margin-left: 150px;
 `;
 
 const UserPassword = styled.div`

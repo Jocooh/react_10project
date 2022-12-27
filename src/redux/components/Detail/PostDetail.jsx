@@ -24,7 +24,7 @@ export default function PostDetail() {
   const articles = useSelector((state) => state.Article);
 
   const titles = useSelector((state) => state);
-  console.log(titles);
+  // console.log(titles);
 
   const modalHandle = () => {
     setModalOpen(true);
@@ -32,7 +32,7 @@ export default function PostDetail() {
   };
 
   const params = useParams();
-  console.log("params", params);
+  // console.log("params", params);
 
   // const please = articles.map((item, i) => {
   //   return item.id === params ? setTitle(item.title) : "다시해라";
@@ -41,25 +41,27 @@ export default function PostDetail() {
   return (
     <StyledSection>
       {/* 지은 : 제목, 내용 적힌 박스를 감싸는 div */}
-      <StyledPostBoxDiv>      
-          <h3>{title}</h3>
-          {/* 지은 : 작성자, 시간, 수정&삭제 아이콘 부분 감싸는 div */}
-          <StyledIconSpanDiv>
-            <CgProfile />
-            <StyledSpan>{articles.userName}</StyledSpan>
-            <MdOutlineWatchLater />
-            <StyledSpan>22.12.24 13:00</StyledSpan>
-            <RiEditBoxLine
-              onClick={modalHandle}
-              style={{ cursor: "pointer", marginLeft: "30px" }}
-            />
-            <RiDeleteBinLine
-              onClick={modalHandle}
-              style={{ cursor: "pointer", marginLeft: "15px" }}
-            />
-            {modalOpen && <ModalBox setModalOpen={setModalOpen} />}
-          </StyledIconSpanDiv>
-          <StyledPostP>튜터님이 저희 팀원 해주세요....🤣</StyledPostP>
+
+      <StyledPostBoxDiv>
+        <h3>{title}</h3>
+        {/* 지은 : 작성자, 시간, 수정&삭제 아이콘 부분 감싸는 div */}
+        <StyledIconSpanDiv>
+          <CgProfile />
+          <StyledSpan>{articles.userName}</StyledSpan>
+          <MdOutlineWatchLater />
+          <StyledSpan>22.12.24 13:00</StyledSpan>
+          <RiEditBoxLine
+            onClick={modalHandle}
+            style={{ cursor: "pointer", marginLeft: "30px" }}
+          />
+          <RiDeleteBinLine
+            onClick={modalHandle}
+            style={{ cursor: "pointer", marginLeft: "15px" }}
+          />
+          {modalOpen && <ModalBox setModalOpen={setModalOpen} />}
+        </StyledIconSpanDiv>
+        <StyledPostP>튜터님이 저희 팀원 해주세요....🤣</StyledPostP>
+
       </StyledPostBoxDiv>
     </StyledSection>
   );

@@ -28,6 +28,8 @@ export const StyledSection = styled.section`
   /* width: 860px; */
   min-height: 400px;
   margin: 30px;
+
+  
 `;
 
 export const StyledIconSpanDiv = styled.div`

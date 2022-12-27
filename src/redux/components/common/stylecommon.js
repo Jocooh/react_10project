@@ -7,7 +7,10 @@ const StyledBtn = styled.button`
   height: 30px;
 `;
 const StyledInput = styled.input`
-  background: #f9f4fa;
-  border: 0.5px solid #000;
+  border: none;
+  border-bottom: 2px solid #444;
+  :focus {
+    outline: none;
+  }
 `;
 export { StyledBtn, StyledInput };
