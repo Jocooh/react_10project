@@ -56,7 +56,7 @@ function UserInput() {
   //   e.preventDefault();
   //   const arc = { title, userName, selected, pwd, content };
 
-  //   fetch("http://localhost:3000/posts", {
+  //   fetch("http://0/posts", {
   //     method: "POST",
   //     headers: { "Content-Type": "application/json" },
   //     body: JSON.stringify(arc),
@@ -79,67 +79,65 @@ function UserInput() {
       content,
       date: today.toLocaleString(),
     };
-    axios.post("http://localhost:3000/posts", arc).then(() => {
+    axios.post("http://localhost:3001/posts", arc).then(() => {
       alert("완성");
       window.location = "/";
     });
   };
-}
 
-return (
-  <>
-    <form className="frm" onSubmit={submitHandler}>
-      <InputBody>
-        <InputBox>
-          <Select onChange={handleSelected} value={selected}></Select>
-          {/* title */}
-          <Input2
-            maxLength
-            required
-            id="title"
-            placeholder="제목을 입력해주세요"
-            width="400px"
+  return (
+    <>
+      <form className="frm" onSubmit={submitHandler}>
+        <InputBody>
+          <InputBox>
+            <Select onChange={handleSelected} value={selected}></Select>
+            {/* title */}
+            <Input2
+              maxLength
+              required
+              id="title"
+              placeholder="제목을 입력해주세요"
+              width="400px"
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+            />
+            {/*User & password  */}
+            <UserPassword>
+              <Input2
+                required
+                id="username"
+                placeholder="닉네임"
+                onChange={(e) => {
+                  setUserName(e.target.value);
+                }}
+              />
+              <Input2
+                required
+                id="password"
+                placeholder="비밀번호를 입력해주세요"
+                type="password"
+                onChange={(e) => {
+                  setPwd(e.target.value);
+                }}
+              />
+            </UserPassword>
+          </InputBox>
+          {/* 글작성 공간 */}
+          <TextArea
+            type="textarea"
+            id="content"
             onChange={(e) => {
-              setTitle(e.target.value);
+              setContent(e.target.value);
             }}
-          />
-          {/*User & password  */}
-          <UserPassword>
-            <Input2
-              required
-              id="username"
-              placeholder="닉네임"
-              onChange={(e) => {
-                setUserName(e.target.value);
-              }}
-            />
-            <Input2
-              required
-              id="password"
-              placeholder="비밀번호를 입력해주세요"
-              type="password"
-              onChange={(e) => {
-                setPwd(e.target.value);
-              }}
-            />
-          </UserPassword>
-        </InputBox>
-        {/* 글작성 공간 */}
-        <TextArea
-          type="textarea"
-          id="content"
-          onChange={(e) => {
-            setContent(e.target.value);
-          }}
-        ></TextArea>
-        <div>
-          <Button type="submit" style={{ float: "right" }}>
-            저장
-          </Button>
-        </div>
-      </InputBody>
-    </form>
-  </>
-);
+          ></TextArea>
+          <div>
+            <Button type="submit">저장</Button>
+          </div>
+        </InputBody>
+      </form>
+    </>
+  );
+}
 
 export default UserInput;

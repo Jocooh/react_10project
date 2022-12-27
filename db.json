@@ -1,5 +1,23 @@
 {
-  "posts": [],
-  "comments": [],
+  "posts": [
+    {
+      "title": "d",
+      "userName": "d",
+      "selected": "1",
+      "pwd": "d",
+      "content": "",
+      "date": "2022. 12. 27. 오후 7:20:39",
+      "id": 1
+    },
+    {
+      "title": "d",
+      "userName": "d",
+      "selected": "2",
+      "pwd": "d",
+      "content": "d",
+      "date": "2022. 12. 27. 오후 10:30:46",
+      "id": 2
+    }
+  ],
   "comments": []
 }
