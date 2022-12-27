@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
 
+
 function Main() {
   const articles = useSelector((state) => state.Article);
   console.log(articles);
@@ -15,7 +16,7 @@ function Main() {
 
   const fetchList = async () => {
     const { data } = await axios.get(
-      "http://localhost:3000/posts?_sort=date&_order=desc"
+      "http://localhost:3001/posts?_sort=date&_order=desc"
     );
     setList(data);
   };
@@ -45,8 +46,11 @@ function Main() {
               to={`/detail/${item.id}`}
               style={{ color: "black", textDecoration: "none" }}
             >
+
+              {item.title}<br/>
               {item.title}
               <br />
+
               {item.date}
             </NavLink>
           </ListBox>
