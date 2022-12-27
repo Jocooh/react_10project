@@ -50,6 +50,7 @@ export default function ModalBox2({
       });
     }
   };
+
   // } else {
   //   alert("비밀번호 틀렸음");
   // }
