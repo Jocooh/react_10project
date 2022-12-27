@@ -92,7 +92,7 @@ export default function Comment() {
         <StyledCommentButton>추가</StyledCommentButton>
       </StyledCommentForm>
       {/* 지은: 요 밑에는 댓글 리스트가 들어오는 댓글 리스트 컴포넌트 */}
-      <CommentList commentList={commentList} />
+      <CommentList setCommentList={setCommentList} commentList={commentList} />
     </StyledCommentSection>
   );
 }

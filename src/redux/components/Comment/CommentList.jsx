@@ -6,7 +6,7 @@ import { StyledCommentLi, StyledCommentDateSpan } from "../Comment/styled";
 import { StyledCommentLiIcon } from "../Comment/styled";
 // import axios from 'axios';
 
-export default function CommentList({ commentList }) {
+export default function CommentList({ commentList, setCommentList }) {
   // const comments = useSelector((state) => state.comments);
   //commentlist 들어오는것도 확인
   // 비밀번호 모달
@@ -48,7 +48,7 @@ export default function CommentList({ commentList }) {
               />
               <RiDeleteBinLine
                 onClick={() => {
-                  return modalHandle(item.id);
+                  return modalHandle(item.id, item.password);
                 }}
                 style={{
                   cursor: "pointer",
@@ -57,7 +57,11 @@ export default function CommentList({ commentList }) {
                 }}
               />
               {modalOpen && (
-                <ModalBox2 commentList={item} setModalOpen={setModalOpen} />
+                <ModalBox2
+                  setCommentList={setCommentList}
+                  commentList={item}
+                  setModalOpen={setModalOpen}
+                />
               )}
             </StyledCommentLiIcon>
           );

@@ -56,7 +56,7 @@ function UserInput() {
   //   e.preventDefault();
   //   const arc = { title, userName, selected, pwd, content };
 
-  //   fetch("http://0/posts", {
+  //   fetch("http://localhost:3000/posts", {
   //     method: "POST",
   //     headers: { "Content-Type": "application/json" },
   //     body: JSON.stringify(arc),
