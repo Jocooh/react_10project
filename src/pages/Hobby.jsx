@@ -49,6 +49,8 @@ function Hobby() {
               style={{ color: "black", textDecoration: "none" }}
             >
               {item.title}
+              <br />
+              {item.date}
             </NavLink>
           </ListBox>
         ))}

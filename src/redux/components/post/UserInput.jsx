@@ -12,7 +12,6 @@ import axios from "axios";
 import postdetail from "../../modules/detail";
 
 function UserInput() {
-  //컴포넌트 내부에서 사용할 state
   const [title, setTitle] = useState("");
   const [userName, setUserName] = useState("");
   const [selected, setSelected] = useState(0);
@@ -21,12 +20,17 @@ function UserInput() {
   const [pwd, setPwd] = useState("");
   const [content, setContent] = useState("");
 
-  const Article = useSelector((state) => state.Article);
+  const useArticle = useSelector((state) => state.Article);
 
-  //유진 - store.postdetail에 접근 -> (PostDetail로 넘겨주기)
-  // const postdetail = useSelector((state) => state.postdetail);
+  // //user title작성
+  // const handleTitle = (e) => {
+  //     setTitle(e.target.value);
+  // };
+  // //user닉네임작성
+  // const handleUser = (e) => {
+  //     setUserName(e.target.value);
+  // };
 
-  const today = new Date();
   //카테고리 넘버 지정 함수
   const handleSelected = (e) => {
     setSelected(e.target.value);
@@ -62,9 +66,11 @@ function UserInput() {
   // };
 
   //**한번씩 이상할떄 있으면 port랑 저희 작업물 다 껐다가 다시 시작해주세요 **/
+
+  const today = new Date();
+
   const submitHandler = (e) => {
     e.preventDefault();
-
     const arc = {
       title,
       userName,
@@ -73,70 +79,67 @@ function UserInput() {
       content,
       date: today.toLocaleString(),
     };
-
-    //유진 - 게시글 추가하는 reducer 호출
-    // dispatch(postdetail(arc));
-
-    axios.post("http://localhost:3001/posts", arc).then(() => {
-      alert("업로드 완료");
+    axios.post("http://localhost:3000/posts", arc).then(() => {
+      alert("완성");
       window.location = "/";
     });
   };
+}
 
-  return (
-    <>
-      <form className="frm" onSubmit={submitHandler}>
-        <InputBody>
-          <InputBox>
-            <Select onChange={handleSelected} value={selected}></Select>
-            {/* title */}
+return (
+  <>
+    <form className="frm" onSubmit={submitHandler}>
+      <InputBody>
+        <InputBox>
+          <Select onChange={handleSelected} value={selected}></Select>
+          {/* title */}
+          <Input2
+            maxLength
+            required
+            id="title"
+            placeholder="제목을 입력해주세요"
+            width="400px"
+            onChange={(e) => {
+              setTitle(e.target.value);
+            }}
+          />
+          {/*User & password  */}
+          <UserPassword>
             <Input2
-              maxLength
               required
-              id="title"
-              placeholder="제목을 입력해주세요"
-              width="400px"
+              id="username"
+              placeholder="닉네임"
               onChange={(e) => {
-                setTitle(e.target.value);
+                setUserName(e.target.value);
               }}
             />
-            {/*User & password  */}
-            <UserPassword>
-              <Input2
-                required
-                id="username"
-                placeholder="닉네임"
-                onChange={(e) => {
-                  setUserName(e.target.value);
-                }}
-              />
-              <Input2
-                required
-                id="password"
-                placeholder="비밀번호를 입력해주세요"
-                type="password"
-                onChange={(e) => {
-                  setPwd(e.target.value);
-                }}
-              />
-            </UserPassword>
-          </InputBox>
-          {/* 글작성 공간 */}
-          <TextArea
-            type="textarea"
-            id="content"
-            onChange={(e) => {
-              setContent(e.target.value);
-            }}
-          ></TextArea>
-          <div>
-            <Button type="submit" style={{ float: "right" }}>
-              저장
-            </Button>
-          </div>
-        </InputBody>
-      </form>
-    </>
-  );
-}
+            <Input2
+              required
+              id="password"
+              placeholder="비밀번호를 입력해주세요"
+              type="password"
+              onChange={(e) => {
+                setPwd(e.target.value);
+              }}
+            />
+          </UserPassword>
+        </InputBox>
+        {/* 글작성 공간 */}
+        <TextArea
+          type="textarea"
+          id="content"
+          onChange={(e) => {
+            setContent(e.target.value);
+          }}
+        ></TextArea>
+        <div>
+          <Button type="submit" style={{ float: "right" }}>
+            저장
+          </Button>
+        </div>
+      </InputBody>
+    </form>
+  </>
+);
+
 export default UserInput;
