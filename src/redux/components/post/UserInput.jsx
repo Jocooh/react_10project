@@ -6,6 +6,7 @@ import Select from "./Select";
 import { TextArea } from "./styles";
 // import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
+
 import { NavLink, useNavigate } from "react-router-dom"; // 유진
 import axios from "axios";
 
@@ -17,6 +18,7 @@ function UserInput() {
 
     const [pwd, setPwd] = useState("");
     const [content, setContent] = useState("");
+
 
 
 
@@ -67,6 +69,7 @@ function UserInput() {
       pwd,
       content,
       date: today.toLocaleString(),
+
     };
 
     axios.post("http://localhost:3000/posts", arc).then(() => {
@@ -77,8 +80,10 @@ function UserInput() {
 
 
 
+
   return (
     <>
+
       <form className="frm" onSubmit={submitHandler}>
         <InputBody>
           <InputBox>

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ListBody, ListBox, ListBtn, SearNBtn } from "./styles";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 
 import { useState } from "react";
 import axios from "axios";
@@ -24,9 +25,11 @@ function Main() {
     setList(data);
   };
 
+
   useEffect(() => {
     fetchList();
   }, []);
+
 
   return (
     <div>
@@ -41,6 +44,7 @@ function Main() {
           </ListBtn>
         </SearNBtn>
         <br />
+
         <p>최신글부터 올라옵니다.</p>
         {list?.map((item) => (
           <ListBox key={item.id}>
@@ -52,6 +56,7 @@ function Main() {
             </NavLink>
           </ListBox>
         ))}
+
       </ListBody>
     </div>
   );
