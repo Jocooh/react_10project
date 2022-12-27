@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import { useDispatch, useSelector } from "react-redux";
-import { addComment } from "../../modules/comments";
 import CommentList from "./CommentList";
 import { useParams } from "react-router-dom";
 import {
@@ -12,11 +10,8 @@ import {
   StyledPwtInput,
   StyledCommentButton,
 } from "../Comment/styled";
-import { isElementType } from "@testing-library/user-event/dist/utils";
 
 export default function Comment() {
-  const dispatch = useDispatch();
-
   const [comment, setComment] = useState("");
   const [password, setPassword] = useState("");
 
@@ -57,26 +52,8 @@ export default function Comment() {
       setCommentList([...commentList, cmt]);
       setComment("");
       setPassword("");
-      console.log(commentList);
     });
-    console.log("comment에 있는 commentList", commentList);
-
-    //     const newComment = {
-    //         id: uuidv4(),
-    //         comment: comment,
-    //         password: password,
-    //     };
-
-    //     dispatch(addComment(newComment));
-    //     console.log(newComment);
-
-    //     // 댓글 추가 된 후 댓글 input창 초기화
-    //     setComment("");
-    //     setPassword("");
   };
-  // useEffect(() => {
-  //   fetchList();
-  // }, []);
 
   return (
     <StyledCommentSection>
