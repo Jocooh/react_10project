@@ -25,15 +25,16 @@ export default function Comment() {
   const paramId = useParams();
 
   const fetchList = async () => {
-    const { data } = await axios.get("http://localhost:3001/comments");
+    const { data } = await axios.get("http://localhost:3000/comments");
     setCommentList(data);
   };
   useEffect(() => {
     fetchList();
   }, []);
 
-
-  const selectedComments = commentList?.filter((item) => Number(item.postid) === Number(paramId.id));
+  const selectedComments = commentList?.filter(
+    (item) => Number(item.postid) === Number(paramId.id)
+  );
 
   // comment 추가 버튼 누르면 댓글 추가되는 onsubmit 함수
   const handleCommentSubmit = (event) => {
@@ -46,12 +47,12 @@ export default function Comment() {
     const today = new Date();
     const cmt = {
       id: uuidv4(),
-      "postid": paramId.id,
+      postid: paramId.id,
       comment,
       password,
       date: today.toLocaleString(),
     };
-    axios.post("http://localhost:3001/comments", cmt).then(() => {
+    axios.post("http://localhost:3000/comments", cmt).then(() => {
       alert("댓글 추가 완료");
       setCommentList([...commentList, cmt]);
       setComment("");
@@ -59,9 +60,6 @@ export default function Comment() {
       console.log(commentList);
     });
     console.log("comment에 있는 commentList", commentList);
-
-
-
 
     //     const newComment = {
     //         id: uuidv4(),
@@ -104,7 +102,11 @@ export default function Comment() {
         <StyledCommentButton>추가</StyledCommentButton>
       </StyledCommentForm>
       {/* 지은: 요 밑에는 댓글 리스트가 들어오는 댓글 리스트 컴포넌트 */}
-      <CommentList selectedComments={selectedComments} commentList={commentList} />
+      <CommentList
+        setCommentList={setCommentList}
+        selectedComments={selectedComments}
+        commentList={commentList}
+      />
     </StyledCommentSection>
   );
 }
