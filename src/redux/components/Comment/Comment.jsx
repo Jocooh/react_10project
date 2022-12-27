@@ -22,10 +22,12 @@ export default function Comment() {
   const [commentList, setCommentList] = useState(null);
 
   const fetchList = async () => {
-    const { data } = await axios.get("http://localhost:3001/comments");
+    const { data } = await axios.get("http://localhost:3000/comments");
     setCommentList(data);
   };
-
+  useEffect(() => {
+    fetchList();
+  }, []);
   // comment 추가 버튼 누르면 댓글 추가되는 onsubmit 함수
   const handleCommentSubmit = (event) => {
     event.preventDefault();
@@ -36,17 +38,19 @@ export default function Comment() {
     }
     const today = new Date();
     const cmt = {
+      id: uuidv4(),
       comment,
       password,
       date: today.toLocaleString(),
     };
-    axios.post("http://localhost:3001/comments", cmt).then(() => {
+    axios.post("http://localhost:3000/comments", cmt).then(() => {
       alert("댓글 추가 완료");
+      setCommentList([...commentList, cmt]);
       setComment("");
       setPassword("");
-      setCommentList([...commentList, cmt]);
+      console.log(commentList);
     });
-
+    console.log("comment에 있는 commentList", commentList);
     //     const newComment = {
     //         id: uuidv4(),
     //         comment: comment,
@@ -60,9 +64,9 @@ export default function Comment() {
     //     setComment("");
     //     setPassword("");
   };
-  useEffect(() => {
-    fetchList();
-  }, []);
+  // useEffect(() => {
+  //   fetchList();
+  // }, []);
 
   return (
     <StyledCommentSection>
