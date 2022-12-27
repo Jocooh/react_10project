@@ -66,7 +66,7 @@ export default function PostDetail() {
       {/* 지은 : 제목, 내용 적힌 박스를 감싸는 div */}
 
       <StyledPostBoxDiv>
-        <h3>{selectedDetail?.title}</h3>
+        <h3 style={{ backgroundColor: "gray" }}>{selectedDetail?.title}</h3>
 
         <StyledIconSpanDiv>
           <CgProfile />
