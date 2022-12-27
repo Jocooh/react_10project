@@ -37,17 +37,21 @@ function Main() {
           </ListBtn>
         </SearNBtn>
         <br />
-
-        <p>최신글부터 올라옵니다.</p>
         {list?.map((item) => (
           <ListBox key={item.id}>
             <NavLink
               to={`/detail/${item.id}`}
-              style={{ color: "black", textDecoration: "none" }}
+              style={{
+                color: "black",
+                textDecoration: "none",
+              }}
             >
-              {item.title}
-              <br />
-              {item.date}
+              <span>{item.title}</span>
+              <span
+                style={{ fontSize: "20px", color: "gray", marginRight: "auto" }}
+              >
+                {item.date}
+              </span>
             </NavLink>
           </ListBox>
         ))}

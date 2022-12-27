@@ -9,7 +9,8 @@ export const ListBody = styled.div`
   margin: 0 auto 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; // 유진 - ListBody를 센터로 맞추려고 left position은 주석처리했습니다
+  /* justify-content: center; // 유진 - ListBody를 센터로 맞추려고 left position은 주석처리했습니다 */
+  align-items: center;
   padding-top: 60px; // 유진 - 버튼 위치때문에 상단에 여백 줌
   padding-bottom: 60px; // 유진 - 상단이랑 비율 맞추려고 하단에도 여백 줌
 `;
@@ -20,10 +21,8 @@ export const ListBtn = styled.button`
   width: 150px;
   height: 60px;
   border-radius: 30px;
-  /* position: relative; */
-  /* left: 80%; */
-  float: right; // 유진 - position: relative;, left: 80%; 설정 지우고 왼쪽정렬
-  margin-right: 10%; // 유진 - 버튼 오른쪽 여백
+  //float: right; // 유진 - position: relative;, left: 80%; 설정 지우고 왼쪽정렬
+  margin-left: auto; // 유진 - 버튼 오른쪽 여백
   background-color: white;
   font-size: 25px;
   font-weight: bold;
@@ -42,11 +41,15 @@ export const ListBox = styled.div`
   width: 950px;
   height: 100px;
   background-color: #f0d8f8;
-  position: relative;
+  /* position: relative; */
   left: 10%;
   font-size: 25px;
-  align-items: center;
+
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
   padding: 50px;
   box-sizing: border-box;
   border-radius: 40px;
