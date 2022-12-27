@@ -67,13 +67,13 @@ function UserInput() {
 
   //**한번씩 이상할떄 있으면 port랑 저희 작업물 다 껐다가 다시 시작해주세요 **/
 
+  const today = new Date();
+
   const submitHandler = (e) => {
     e.preventDefault();
     const arc = { title, userName, selected, pwd, content, date: today.toLocaleString(),  };
     axios.post("http://localhost:3001/posts", arc).then(alert("완성"));
   };
-
-
 
    return (
     <>

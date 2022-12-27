@@ -1,7 +1,40 @@
 {
-
   "posts": [
     {
+      "title": "test",
+      "userName": "test",
+      "selected": 0,
+      "pwd": "test",
+      "content": "test",
+      "date": "2022. 12. 27. 오전 10:55:42",
+      "id": 1
+    },
+    {
+      "title": "aaa",
+      "userName": "aaa",
+      "selected": 0,
+      "pwd": "aaa",
+      "content": "aaaa",
+      "date": "2022. 12. 27. 오전 10:59:03",
+      "id": 2
+    },
+    {
+      "title": "test",
+      "userName": "test",
+      "selected": "1",
+      "pwd": "test",
+      "content": "setset",
+      "date": "2022. 12. 27. 오전 10:59:21",
+      "id": 3
+    },
+    {
+      "title": "1",
+      "userName": "1",
+      "selected": 0,
+      "pwd": "1",
+      "content": "1",
+      "date": "2022. 12. 27. 오전 11:05:15",
+      "id": 4
     }
   ]
 }
