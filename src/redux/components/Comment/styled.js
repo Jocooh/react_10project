@@ -72,3 +72,8 @@ export const StyledCommentLiIcon = styled.div`
   flex-direction: row;
   align-items: center;
 `;
+
+export const StyledCommentDateSpan = styled.span`
+  font-size: small;
+  color: rgba(0, 0, 0, 0.5);
+`;

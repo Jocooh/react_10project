@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ListBody, ListBox, ListBtn, SearNBtn } from "./styles";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -16,7 +16,9 @@ function Main() {
   const [list, setList] = useState(null);
 
   const fetchList = async () => {
-    const { data } = await axios.get("http://localhost:3001/posts");
+    const { data } = await axios.get(
+      "http://localhost:3000/posts?_sort=date&_order=desc"
+    );
     setList(data);
   };
 
@@ -37,6 +39,7 @@ function Main() {
           </ListBtn>
         </SearNBtn>
         <br />
+
         <p>최신글부터 올라옵니다.</p>
         {list?.map((item) => (
           <ListBox key={item.id}>

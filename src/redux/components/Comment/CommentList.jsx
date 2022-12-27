@@ -1,24 +1,30 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+// import { useSelector } from "react-redux";
 import ModalBox2 from "../Modal/ModalBox2";
 import { RiEditBoxLine, RiDeleteBinLine } from "react-icons/ri";
-import { StyledCommentLi } from "../Comment/styled";
+import { StyledCommentLi, StyledCommentDateSpan } from "../Comment/styled";
 import { StyledCommentLiIcon } from "../Comment/styled";
+// import axios from 'axios';
 
-export default function CommentList() {
-  const comments = useSelector((state) => state.comments);
+export default function CommentList({ commentList }) {
+  // const comments = useSelector((state) => state.comments);
 
   // 비밀번호 모달
   const [modalOpen, setModalOpen] = useState(false);
 
   const modalHandle = () => {
-    comments.map((item) => {
-      if (item.id === comments.id) {
+    commentList?.map((item) => {
+      console.log(item);
+      console.log(commentList);
+      if (item.id === commentList.id) {
         setModalOpen(true);
         document.body.style.overflow = "hidden"; //모달창 오픈 시 배경 스크롤 비활성화
       }
+      console.log("item", item.id);
+      console.log("commentList", commentList.id);
     });
   };
+
   // console.log(comments);
   // comments.filter((item) => item.password !== action.payload);
 
@@ -26,11 +32,12 @@ export default function CommentList() {
   return (
     <>
       <ul>
-        {comments.map((item) => {
+        {commentList?.map((item) => {
           return (
             // 유진 - 가로정렬하려고 div태그를 StyledCommentLiIcon으로 만들어서 import함!!
             <StyledCommentLiIcon key={item.id}>
               <StyledCommentLi>{item.comment}</StyledCommentLi>
+              <StyledCommentDateSpan>{item.date}</StyledCommentDateSpan>
               <RiEditBoxLine
                 onClick={modalHandle}
                 style={{
@@ -48,7 +55,7 @@ export default function CommentList() {
                 }}
               />
               {modalOpen && (
-                <ModalBox2 comment={item} setModalOpen={setModalOpen} />
+                <ModalBox2 commentList={item} setModalOpen={setModalOpen} />
               )}
             </StyledCommentLiIcon>
           );

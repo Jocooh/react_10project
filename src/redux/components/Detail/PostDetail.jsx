@@ -61,6 +61,7 @@ export default function PostDetail() {
   return (
     <StyledSection>
       {/* 지은 : 제목, 내용 적힌 박스를 감싸는 div */}
+
       <StyledPostBoxDiv>
         <div>
           {title?.map((item) => (

@@ -1,9 +1,9 @@
-import React from "react";
-import { isHtmlElement } from "react-router-dom";
-//dist/dom";
-import { v4 as uuidv4 } from "uuid";
+//detail 주석처리해놓을꼐요
 
-//////////////////////
+// import React from "react";
+// import { isHtmlElement } from "react-router-dom";
+// //dist/dom";
+// import { v4 as uuidv4 } from "uuid";
 
 // const CHANGE_TITLE = "CHANGE_TITLE";
 
