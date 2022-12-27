@@ -14,7 +14,7 @@ function Hobby() {
   const [list, setList] = useState(null);
 
   const fetchList = async () => {
-    const { data } = await axios.get("http://localhost:3000/posts?selected=4");
+    const { data } = await axios.get("http://localhost:3001/posts?selected=4");
     setList(data);
   };
 
@@ -48,9 +48,18 @@ function Hobby() {
               to={`/detail/${item.id}`}
               style={{ color: "black", textDecoration: "none" }}
             >
-              {item.title}
-              <br />
-              {item.date}
+              <div>
+                <span style={{ marginRight: "40px" }}>{item.title}</span>
+                <span
+                  style={{
+                    fontSize: "15px",
+                    color: "gray",
+                    marginRight: "auto",
+                  }}
+                >
+                  {item.date}
+                </span>
+              </div>
             </NavLink>
           </ListBox>
         ))}

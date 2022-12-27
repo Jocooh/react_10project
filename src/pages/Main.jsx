@@ -15,7 +15,7 @@ function Main() {
 
   const fetchList = async () => {
     const { data } = await axios.get(
-      "http://localhost:3000/posts?_sort=date&_order=desc"
+      "http://localhost:3001/posts?_sort=date&_order=desc"
     );
     setList(data);
   };
@@ -46,12 +46,18 @@ function Main() {
                 textDecoration: "none",
               }}
             >
-              <span>{item.title}</span>
-              <span
-                style={{ fontSize: "20px", color: "gray", marginRight: "auto" }}
-              >
-                {item.date}
-              </span>
+              <div>
+                <span style={{ marginRight: "40px" }}>{item.title}</span>
+                <span
+                  style={{
+                    fontSize: "15px",
+                    color: "gray",
+                    marginRight: "auto",
+                  }}
+                >
+                  {item.date}
+                </span>
+              </div>
             </NavLink>
           </ListBox>
         ))}

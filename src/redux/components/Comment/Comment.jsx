@@ -25,7 +25,7 @@ export default function Comment() {
   const paramId = useParams();
 
   const fetchList = async () => {
-    const { data } = await axios.get("http://localhost:3000/comments");
+    const { data } = await axios.get("http://localhost:3001/comments");
     setCommentList(data);
   };
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function Comment() {
       password,
       date: today.toLocaleString(),
     };
-    axios.post("http://localhost:3000/comments", cmt).then(() => {
+    axios.post("http://localhost:3001/comments", cmt).then(() => {
       alert("댓글 추가 완료");
       setCommentList([...commentList, cmt]);
       setComment("");

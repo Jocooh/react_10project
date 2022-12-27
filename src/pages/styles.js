@@ -5,7 +5,7 @@ export const ListBody = styled.div`
   height: auto;
   /* left: 50%; */
   /* position: absolute; */
-  background-color: beige;
+  /* background-color: beige; */
   margin: 0 auto 0 auto;
   display: flex;
   flex-direction: column;
@@ -24,8 +24,9 @@ export const ListBtn = styled.button`
   //float: right; // 유진 - position: relative;, left: 80%; 설정 지우고 왼쪽정렬
   margin-left: auto; // 유진 - 버튼 오른쪽 여백
   background-color: white;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
+  background-color: #f0d8f8;
   &:hover {
     background-color: #e7b5f7;
     cursor: pointer;
@@ -34,25 +35,26 @@ export const ListBtn = styled.button`
 
 export const SearNBtn = styled.div`
   height: 100px;
+  margin-left: 700px;
 `;
 
 // 메인페이지 글 리스트
 export const ListBox = styled.div`
   width: 950px;
-  height: 100px;
+  height: 90px;
   background-color: #f0d8f8;
   /* position: relative; */
   left: 10%;
-  font-size: 25px;
+  font-size: 20px;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  padding: 50px;
+  padding: 40px;
   box-sizing: border-box;
   border-radius: 40px;
-  margin: 20px;
+  margin: 15px;
   text-decoration: none;
 `;

@@ -79,7 +79,7 @@ function UserInput() {
       content,
       date: today.toLocaleString(),
     };
-    axios.post("http://localhost:3000/posts", arc).then(() => {
+    axios.post("http://localhost:3001/posts", arc).then(() => {
       alert("완성");
       window.location = "/";
     });

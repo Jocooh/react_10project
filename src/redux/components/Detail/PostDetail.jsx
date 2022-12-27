@@ -28,7 +28,7 @@ export default function PostDetail() {
   const paramId = useParams();
 
   const fetchtitle = async () => {
-    const { data } = await axios.get("http://localhost:3000/posts");
+    const { data } = await axios.get("http://localhost:3001/posts");
     setTitle(data);
   };
 

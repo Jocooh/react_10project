@@ -14,7 +14,7 @@ function Relationship() {
   const [list, setList] = useState(null);
 
   const fetchList = async () => {
-    const { data } = await axios.get("http://localhost:3000/posts?selected=2");
+    const { data } = await axios.get("http://localhost:3001/posts?selected=2");
     setList(data);
   };
 
@@ -41,9 +41,18 @@ function Relationship() {
               to={`/detail/${item.id}`}
               style={{ color: "black", textDecoration: "none" }}
             >
-              {item.title}
-              <br />
-              {item.date}
+              <div>
+                <span style={{ marginRight: "40px" }}>{item.title}</span>
+                <span
+                  style={{
+                    fontSize: "15px",
+                    color: "gray",
+                    marginRight: "auto",
+                  }}
+                >
+                  {item.date}
+                </span>
+              </div>
             </NavLink>
           </ListBox>
         ))}
