@@ -1,75 +1,32 @@
 {
-
   "posts": [
     {
-      "id": 1,
-      "title": "오늘 밤샘각",
-      "userName": "조성아",
-      "category": 1
-    },
-    {
-      "id": 2,
-      "title": "살려주세여",
-      "userName": "조성아",
-      "category": 3
-    },
-    {
-      "title": "2",
-      "userName": "2",
-      "selected": "2",
-      "pwd": "2",
-      "content": "2",
-      "id": 3
-    },
-    {
-      "title": "s",
-      "userName": "s",
-      "selected": 0,
-      "pwd": "s",
-      "content": "s",
-      "id": 4
-    },
-    {
-      "title": "d",
-      "userName": "d",
+      "title": "인생아",
+      "userName": "인생아",
       "selected": "1",
-      "pwd": "d",
-      "content": "d",
-      "id": 5
+      "pwd": "a;dlksfj",
+      "content": "ㅁㄴ아ㅣ러마ㅣㄴ;얾",
+      "date": "2022. 12. 27. 오전 10:34:47",
+      "id": 1
     },
     {
-      "title": "d",
-      "userName": "d",
-      "selected": "1",
-      "pwd": "d",
-      "content": "d",
-      "id": 6
-    },
-    {
-      "title": "ㅇ",
-      "userName": "ㅇ",
+      "title": "취미",
+      "userName": "취및추",
       "selected": "4",
-      "pwd": "d",
-      "content": "d",
-      "id": 7
+      "pwd": "dkfjalks;fj",
+      "content": "ㅣㅏ얼하ㅣ;ㅁㄹ",
+      "date": "2022. 12. 27. 오전 10:35:00",
+      "id": 2
     },
     {
-      "title": "",
-      "userName": "",
-      "selected": 0,
-      "pwd": "",
-      "content": "",
-      "id": 8
-    },
-    {
-      "title": "ㅁㄴㅇㄹ",
-      "userName": "ㅁㄴㅇㄹ",
-      "selected": "1",
-      "pwd": "asdf",
+      "title": "adsf",
+      "userName": "adsf",
+      "selected": "2",
+      "pwd": "adsf",
       "content": "asdf",
-      "id": 9
+      "date": "2022. 12. 27. 오전 10:38:39",
+      "id": 3
     }
-
   ],
   "comments": [
     {

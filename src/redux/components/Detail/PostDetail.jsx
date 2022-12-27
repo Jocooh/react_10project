@@ -8,12 +8,9 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 // import { useParams } from "react-router-dom";
 // import Contents from "../redux/components/Detail/Contents";
-
-import axios from "axios";
-import { useEffect } from "react";
 
 import {
   StyledSection,
