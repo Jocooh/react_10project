@@ -12,7 +12,6 @@ export const ListBody = styled.div`
   /* justify-content: center; // 유진 - ListBody를 센터로 맞추려고 left position은 주석처리했습니다 */
   align-items: center;
   padding-top: 60px; // 유진 - 버튼 위치때문에 상단에 여백 줌
-  padding-bottom: 60px; // 유진 - 상단이랑 비율 맞추려고 하단에도 여백 줌
 `;
 
 // 글쓰기 버튼

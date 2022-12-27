@@ -10,6 +10,7 @@ import Detail from "../pages/Detail";
 import Post from "../pages/Post";
 import Relationship from "../pages/Relationship";
 import Header from "../redux/components/Header/Header";
+import Footer from "../redux/components/Footer/Footer";
 // import PostEdit from "../pages/PostEdit";
 
 // 2. Router 라는 함수를 만들고 아래와 같이 작성합니다.
@@ -29,9 +30,8 @@ const Router = () => {
           <Route path="post" element={<Post />} />
           <Route path="detail/:id" element={<Detail />} />
           <Route path="life/:id" element={<Detail />} />
-          {/* <Route path="/edit/:id" element={<PostEdit />} /> */}
-          {/* ㄴ 유진 - 글 수정 시 edit으로*/}
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
