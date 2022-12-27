@@ -19,20 +19,11 @@ export default function CommentList({
 
   const [modalOpen, setModalOpen] = useState(false);
   const modalHandle = (id, password) => {
-    // setModalOpen(true);
     selectedComments?.map((item) => {
       console.log(item);
       return id === item.id ? setModalOpen(true) : console.log("응 아님");
-      // console.log("map아이템", item); //id값이 알아서 찍힘
-      // document.body.style.overflow = "hidden"; //모달창 오픈 시 배경 스크롤 비활성화
     });
   };
-
-  // console.log("item아이디", item.id);
-  // console.log("commentList", commentList);
-
-  // console.log(comments);
-  // comments.filter((item) => item.password !== action.payload);
 
   // ul태그 밑에 li태그로 리스트들을 다 뽑아 왔어요..
   return (
@@ -45,7 +36,9 @@ export default function CommentList({
               <StyledCommentLi>{item.comment}</StyledCommentLi>
               <StyledCommentDateSpan>{item.date}</StyledCommentDateSpan>
               <RiEditBoxLine
-                onClick={modalHandle}
+                onClick={() => {
+                  return modalHandle(item.id, item.password);
+                }}
                 style={{
                   cursor: "pointer",
                   marginLeft: "30px",

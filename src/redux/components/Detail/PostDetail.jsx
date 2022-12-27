@@ -3,9 +3,9 @@ import { CgProfile } from "react-icons/cg";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { RiEditBoxLine, RiDeleteBinLine } from "react-icons/ri";
 import ModalBox from "../Modal/ModalBox";
-import { useSelector } from "react-redux";
+
 import { useParams } from "react-router-dom";
-import { NavLink, useNavigate } from "react-router-dom";
+
 import axios from "axios";
 import { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
@@ -23,7 +23,6 @@ export default function PostDetail() {
   // 비밀번호 모달
   const [modalOpen, setModalOpen] = useState(false);
   const [title, setTitle] = useState(null);
-  const [contents, setContents] = useState("");
 
   const paramId = useParams();
 
@@ -41,29 +40,10 @@ export default function PostDetail() {
     (item) => item.id === Number(paramId.id)
   )[0];
 
-  console.log(typeof selectedDetail?.id);
-
-  console.log(typeof paramId?.id);
-
-  console.log(selectedDetail);
-
-  // const articles = useSelector((state) => state.Article);
-
-  // const titles = useSelector((state) => state);
-  // console.log(titles);
-
-  const modalHandle = () => {
+  const handleModal = () => {
     setModalOpen(true);
     document.body.style.overflow = "hidden"; //모달창 오픈 시 배경 스크롤 비활성화
   };
-
-  // const params = useParams();
-
-  // console.log("params", params);
-
-  // const please = articles.map((item, i) => {
-  //   return item.id === params ? setTitle(item.title) : "다시해라";
-  // });
 
   return (
     <StyledSection>
@@ -78,14 +58,20 @@ export default function PostDetail() {
           <MdOutlineWatchLater />
           <StyledSpan>{selectedDetail?.date}</StyledSpan>
           <RiEditBoxLine
-            onClick={modalHandle}
+            onClick={handleModal}
             style={{ cursor: "pointer", marginLeft: "30px" }}
           />
           <RiDeleteBinLine
-            onClick={modalHandle}
+            onClick={handleModal}
             style={{ cursor: "pointer", marginLeft: "15px" }}
           />
-          {modalOpen && <ModalBox setModalOpen={setModalOpen} />}
+          {modalOpen && (
+            <ModalBox
+              title={title}
+              setTitle={setTitle}
+              setModalOpen={setModalOpen}
+            />
+          )}
         </StyledIconSpanDiv>
         <StyledPostP>{selectedDetail?.content}</StyledPostP>
       </StyledPostBoxDiv>

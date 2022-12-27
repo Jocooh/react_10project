@@ -1,7 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { removeComment } from "../../modules/comments";
 
 import {
   StyledModalBg,
@@ -31,28 +29,25 @@ export default function ModalBox2({
 
   const handleConfirmPassword = (e) => {
     setConfirmPassword(e.target.value);
-    console.log(confirmPassword);
   };
 
   const deleteHandler = (e) => {
     e.preventDefault();
-    console.log(commentList);
+
     const passwordId = commentList.id;
-    console.log(passwordId);
+
     if (confirmPassword === commentList.password) {
       setModalOpen(false);
       axios.delete(`http://localhost:3000/comments/${passwordId}`).then(() => {
-        const { data } = axios
-          .get("http://localhost:3000/comments")
-          .then(() => {
-            setCommentList(...setCommentList, data);
-          });
+        axios.get("http://localhost:3000/comments").then((res) => {
+          console.log(res.data);
+          setCommentList(res.data);
+        });
       });
+    } else {
+      alert("비밀번호를 다시 입력해주세요");
     }
   };
-  // } else {
-  //   alert("비밀번호 틀렸음");
-  // }
   //다시받아서 props set렌더링
   //1.state가 변경되는부분
   //2.props가 변경되는 부분
