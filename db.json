@@ -62,6 +62,13 @@
       "comment": "test5",
       "password": "test5",
       "date": "2022. 12. 27. 오후 10:28:24"
+    },
+    {
+      "id": "a4ad25f1-8601-4b0c-a43a-5fdf4bece4de",
+      "postid": "3",
+      "comment": "3detail의 2번째 댓글",
+      "password": "32",
+      "date": "2022. 12. 27. 오후 10:35:19"
     }
   ]
 }
