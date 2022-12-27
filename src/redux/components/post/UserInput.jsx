@@ -11,14 +11,13 @@ import { NavLink, useNavigate } from "react-router-dom"; // 유진
 import axios from "axios";
 
 function UserInput() {
-    const [title, setTitle] = useState("");
-    const [userName, setUserName] = useState("");
-    const [selected, setSelected] = useState(0);
-    const dispatch = useDispatch();
+  const [title, setTitle] = useState("");
+  const [userName, setUserName] = useState("");
+  const [selected, setSelected] = useState(0);
+  const dispatch = useDispatch();
 
-    const [pwd, setPwd] = useState("");
-    const [content, setContent] = useState("");
-
+  const [pwd, setPwd] = useState("");
+  const [content, setContent] = useState("");
 
   const useArticle = useSelector((state) => state.Article);
 
@@ -56,14 +55,14 @@ function UserInput() {
   //   e.preventDefault();
   //   const arc = { title, userName, selected, pwd, content };
 
-    //   fetch("http://localhost:3000/posts", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(arc),
-    //   }).then(() => {
-    //     console.log("new article added");
-    //   });
-    // };
+  //   fetch("http://localhost:3000/posts", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(arc),
+  //   }).then(() => {
+  //     console.log("new article added");
+  //   });
+  // };
 
   //**한번씩 이상할떄 있으면 port랑 저희 작업물 다 껐다가 다시 시작해주세요 **/
 
@@ -79,15 +78,14 @@ function UserInput() {
       content,
       date: today.toLocaleString(),
     };
-    axios.post("http://localhost:3001/posts", arc).then(() => {
+    axios.post("http://localhost:3000/posts", arc).then(() => {
       alert("완성");
       window.location = "/";
     });
   };
 
-   return (
+  return (
     <>
-
       <form className="frm" onSubmit={submitHandler}>
         <InputBody>
           <InputBox>
@@ -141,7 +139,6 @@ function UserInput() {
       </form>
     </>
   );
-          }
-
+}
 
 export default UserInput;

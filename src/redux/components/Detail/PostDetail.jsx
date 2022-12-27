@@ -11,7 +11,6 @@ import { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 // import Contents from "../redux/components/Detail/Contents";
 
-
 import {
   StyledSection,
   StyledIconSpanDiv,
@@ -23,30 +22,28 @@ import {
 export default function PostDetail() {
   // 비밀번호 모달
   const [modalOpen, setModalOpen] = useState(false);
-  const [title, setTitle] = useState(null); 
+  const [title, setTitle] = useState(null);
   const [contents, setContents] = useState("");
 
   const paramId = useParams();
- 
 
-  const fetchtitle = async() => {
-    const{ data }= await axios.get("http://localhost:3001/posts");
+  const fetchtitle = async () => {
+    const { data } = await axios.get("http://localhost:3000/posts");
     setTitle(data);
-  }
+  };
 
   useEffect(() => {
     fetchtitle();
     console.log(title);
   }, []);
 
+  const selectedDetail = title?.filter(
+    (item) => item.id === Number(paramId.id)
+  )[0];
 
-  
+  console.log(typeof selectedDetail?.id);
 
-  const selectedDetail = title?.filter((item) =>  item.id === Number(paramId.id))[0];
-  
-  console.log(typeof(selectedDetail?.id));
-
-  console.log(typeof(paramId?.id));
+  console.log(typeof paramId?.id);
 
   console.log(selectedDetail);
 
@@ -73,8 +70,8 @@ export default function PostDetail() {
       {/* 지은 : 제목, 내용 적힌 박스를 감싸는 div */}
 
       <StyledPostBoxDiv>
-      <h3>{selectedDetail?.title}</h3>
-   
+        <h3>{selectedDetail?.title}</h3>
+
         <StyledIconSpanDiv>
           <CgProfile />
           <StyledSpan>{selectedDetail?.userName}</StyledSpan>
@@ -90,9 +87,7 @@ export default function PostDetail() {
           />
           {modalOpen && <ModalBox setModalOpen={setModalOpen} />}
         </StyledIconSpanDiv>
-        <StyledPostP>
-        {selectedDetail?.contents}
-        </StyledPostP>
+        <StyledPostP>{selectedDetail?.content}</StyledPostP>
       </StyledPostBoxDiv>
     </StyledSection>
   );
