@@ -1,48 +1,98 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import ModalBox2 from '../Modal/ModalBox2';
+import React, { useEffect, useState } from "react";
+// import { useSelector } from "react-redux";
+import ModalBox2 from "../Modal/ModalBox2";
 import { RiEditBoxLine, RiDeleteBinLine } from "react-icons/ri";
-import { StyledCommentLi } from "../Comment/styled";
+import { StyledCommentLi, StyledCommentDateSpan } from "../Comment/styled";
+import { StyledCommentLiIcon } from "../Comment/styled";
+import EditModalBox from "../Modal/EditModalBox";
+import axios from "axios";
+import EditComment from "./EditComment";
+// import axios from 'axios';
 
-export default function CommentList() {
-    const comments = useSelector((state) => state.comments);
-    // 비밀번호 모달
+export default function CommentList({
+    selectedComments,
+    setCommentList,
+}) {
+    const [editComment, setEditComment] = useState({ comment: "" });
+
     const [modalOpen, setModalOpen] = useState(false);
+    const [editModalOpen, setEditModalOpen] = useState(false);
 
-    const modalHandle = () => {
-        setModalOpen(true);
-        document.body.style.overflow = "hidden"; //모달창 오픈 시 배경 스크롤 비활성화
+    // 삭제 아이콘 누르면 뜨는 비밀번호 모달
+    const modalHandle = (id, password) => {
+        selectedComments?.map((item) => {
+            console.log(item);
+            return id === item.id ? setModalOpen(true) : console.log("응 아님");
+        });
+        document.body.style.overflow = "hidden"; // 모달창 오픈 시 배경 스크롤 비활성화
+    };
+
+    // 수정 아이콘 누르면 뜨는 비밀번호 모달
+    const editModalHandle = (id, password) => {
+        selectedComments?.map((item) => {
+            console.log(item);
+            return id === item.id
+                ? setEditModalOpen(true)
+                : console.log("응 아님");
+        });
+        document.body.style.overflow = "hidden"; // 모달창 오픈 시 배경 스크롤 비활성화
     };
 
     // ul태그 밑에 li태그로 리스트들을 다 뽑아 왔어요..
-    // 근데 아이콘이 안먹어요...RiEditBoxLine, RiDeleteBinLine 요 두놈이 아이콘이고
-    // {modalOpen && (<ModalBox setModalOpen={setModalOpen} />)}
-    // ⬆ 요 코드는 안건드셔도 됩니다! 모달 오픈하는 코드에요!
     return (
         <>
             <ul>
-                {comments.map((item) => {
+                {selectedComments?.map((item) => {
                     return (
-                        <div>
+                        // 유진 - 가로정렬하려고 div태그를 StyledCommentLiIcon으로 만들어서 import함!!
+                        <StyledCommentLiIcon key={item.id}>
                             <StyledCommentLi>{item.comment}</StyledCommentLi>
+                            <EditComment
+                                isEdit={false}
+                                editComment={editComment}
+                                setEditComment={setEditComment}
+                            />
+                            <StyledCommentDateSpan>
+                                {item.date}
+                            </StyledCommentDateSpan>
                             <RiEditBoxLine
-                                onClick={modalHandle}
+                                onClick={() => {
+                                    return editModalHandle(
+                                        item.id,
+                                        item.password
+                                    );
+                                }}
                                 style={{
                                     cursor: "pointer",
                                     marginLeft: "30px",
+                                    float: "right",
                                 }}
                             />
+                            {editModalOpen && (
+                                <EditModalBox
+                                    setCommentList={setCommentList}
+                                    commentList={item}
+                                    setEditModalOpen={setEditModalOpen}
+                                />
+                            )}
                             <RiDeleteBinLine
-                                onClick={modalHandle}
+                                onClick={() => {
+                                    return modalHandle(item.id, item.password);
+                                }}
                                 style={{
                                     cursor: "pointer",
                                     marginLeft: "15px",
+                                    float: "right",
                                 }}
                             />
                             {modalOpen && (
-                                <ModalBox2 setModalOpen={setModalOpen} />
+                                <ModalBox2
+                                    setCommentList={setCommentList}
+                                    commentList={item}
+                                    setModalOpen={setModalOpen}
+                                />
                             )}
-                        </div>
+                        </StyledCommentLiIcon>
                     );
                 })}
             </ul>

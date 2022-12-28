@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
+//전체영역 div
 const InputBody = styled.div`
-  width: 1000px;
+  /* width: 900px; */
   margin: auto;
+  /* background-color: beige; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const NoneArrow = styled.select`
@@ -11,31 +16,39 @@ const NoneArrow = styled.select`
   cursor: pointer;
   border-radius: 10px;
   background: #f9f4fa;
+  border: none;
+  height: 50px;
 `;
 
-//전체 input
+//카테고리+제목+닉네임+비번 div
 const InputBox = styled.div`
   display: flex;
   padding: 25px;
-  justify-content: space-around;
-  width: 1000px;
-  margin: 10px auto;
+  justify-content: space-between;
+  width: 800px;
+  margin: 20px auto;
+  height: 40px;
 `;
 
-const TextBody = styled.div``
-
+//본문내용
 const TextArea = styled.input`
-  width: 720px;
+  width: 800px;
   height: 250px;
   border-radius: 20px;
   background: #f9f4fa;
-  margin: auto;
+  border-style: none;
+  text-align: left;
+  vertical-align: top;
+  padding: 10px;
 `;
 
+// 닉네임+비번 div
 const UserPassword = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 50px;
+  gap: 5px;
 `;
 
 export { NoneArrow, InputBody, InputBox, TextArea, UserPassword };

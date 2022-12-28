@@ -1,84 +1,72 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../common/Button";
 import Input2 from "../common/Input2";
-import UserInputTextarea from "./UserInputTextarea";
 import { InputBody, InputBox, UserPassword } from "./styles";
 import Select from "./Select";
 import { TextArea } from "./styles";
-import { v4 as uuidv4 } from "uuid";
-import { useDispatch, useSelector } from "react-redux";
-import { addTitle } from "../../modules/article";
 
+import axios from "axios";
 
 function UserInput() {
   const [title, setTitle] = useState("");
   const [userName, setUserName] = useState("");
-  const [category, setCategory] = useState(0); //select[0] = 카테고리를선택하세요
-  const [selected, setSelected] = useState(1);
-  const dispatch = useDispatch();
+  const [selected, setSelected] = useState(0);
 
   const [pwd, setPwd] = useState("");
   const [content, setContent] = useState("");
-  const [mainList, setMainList] = useState([]);
-
-
-  const useArticle = useSelector((state) => state.Article);
-
-  //user title작성
-  const handleTitle = (e) => {
-    setTitle(e.target.value);
-  };
-  //user닉네임작성
-  const handleUser = (e) => {
-    setUserName(e.target.value);
-  };
 
   //카테고리 넘버 지정 함수
   const handleSelected = (e) => {
     setSelected(e.target.value);
   };
 
-  // 글 저장 함수
-  const submitArticle = (e) => {
+  const today = new Date();
+
+  const submitHandler = (e) => {
     e.preventDefault();
-
-    const newTitle = {
-      title, //현재 title(state)
+    const arc = {
+      title,
       userName,
-      category: selected,
-      id: uuidv4(),
+      selected,
+      pwd,
+      content,
+      date: today.toLocaleString(),
     };
-
-    dispatch(addTitle(newTitle));
-    console.log(newTitle);
+    axios.post("http://localhost:3001/posts", arc).then(() => {
+      alert("저장 완료");
+      window.location = "/";
+    });
   };
-
 
   return (
     <>
-      <form onSubmit={submitArticle}>
+      <form className="frm" onSubmit={submitHandler}>
         <InputBody>
           <InputBox>
-            <p>Selected:{selected}</p>
             <Select onChange={handleSelected} value={selected}></Select>
             {/* title */}
             <Input2
+              maxLength
+              required
               id="title"
               placeholder="제목을 입력해주세요"
               width="400px"
-              borderRadius="10px"
               onChange={(e) => {
-                setTitle(e.target.value)}}
+                setTitle(e.target.value);
+              }}
             />
             {/*User & password  */}
             <UserPassword>
               <Input2
+                required
                 id="username"
                 placeholder="닉네임"
                 onChange={(e) => {
-                  setUserName(e.target.value)}}
+                  setUserName(e.target.value);
+                }}
               />
               <Input2
+                required
                 id="password"
                 placeholder="비밀번호를 입력해주세요"
                 type="password"
@@ -89,17 +77,15 @@ function UserInput() {
             </UserPassword>
           </InputBox>
           {/* 글작성 공간 */}
-          <TextArea type="textarea"  id="content" onChange={(e) => {
-    setContent(e.target.value);
-  }} ></TextArea>
-          {/* <UserInputTextarea id="content" onChange={(e) => {
-    setContent(e.target.value);
-  }} /> */}
+          <TextArea
+            type="textarea"
+            id="content"
+            onChange={(e) => {
+              setContent(e.target.value);
+            }}
+          ></TextArea>
           <div>
-
-            <Button type="submit" style={{ float: "right" }}>
-              저장
-
+            <Button type="submit">저장</Button>
           </div>
         </InputBody>
       </form>
