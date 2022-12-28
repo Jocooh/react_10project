@@ -5,7 +5,7 @@ export const StyledFooter = styled.div`
   height: 30px;
   background: #f0d8f8;
 
-  position: absolute;
+  /* position: absolute; */
   bottom: 0px;
   display: flex;
   justify-content: space-between;
