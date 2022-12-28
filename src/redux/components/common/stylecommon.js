@@ -13,6 +13,7 @@ const StyledBtn = styled.button`
 
   :hover {
     box-shadow: 1px 1px 1px 1px lightgray;
+    cursor: pointer;
   }
 `;
 const StyledInput = styled.input`

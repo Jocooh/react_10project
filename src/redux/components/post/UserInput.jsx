@@ -33,7 +33,7 @@ function UserInput() {
       date: today.toLocaleString(),
     };
     axios.post("http://localhost:3001/posts", arc).then(() => {
-      alert("완성");
+      alert("저장 완료");
       window.location = "/";
     });
   };

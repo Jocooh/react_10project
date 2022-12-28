@@ -54,6 +54,7 @@ export default function ModalBox({ setModalOpen, title, setTitle }) {
   // } else {
   //   console.log("error");
   // }
+  document.body.style.overflow = "unset";
 
   return (
     <StyledModalBg>
