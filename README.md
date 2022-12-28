@@ -39,5 +39,13 @@
 *  시간 약속 잘 지키기
 *  서로 으쌰으쌰 해주기
 
+--------
+
+|팀원|깃 주소|설명|
+|---|---|---|
+|라형선|https://github.com/rhsok| 
+|한지은|https://github.com/yjyyls|
+|손유진|https://github.com/freedobby77|
+|조성아|https://github.com/Jocooh|
 
 
