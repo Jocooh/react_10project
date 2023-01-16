@@ -19,8 +19,7 @@ export default function ModalBox2({
   setModalOpen,
   setCommentList,
 }) {
-  //123
-  console.log("modalbox2 : ", commentList);
+
   const closeModal = () => {
     setModalOpen(false);
     document.body.style.overflow = "unset"; //모달창 클로즈 시 배경 스크롤 활성화
@@ -41,6 +40,7 @@ export default function ModalBox2({
     setConfirmPassword(e.target.value);
   };
 
+
   const deleteHandler = () => {
     const passwordId = commentList.id;
     console.log(passwordId);
@@ -57,6 +57,7 @@ export default function ModalBox2({
     }
   };
 
+
   const updateHandler = () => {
     const passwordId = commentList.id;
 
@@ -71,6 +72,7 @@ export default function ModalBox2({
     } else {
       alert("비밀번호를 다시 입력해주세요");
     }
+    document.body.style.overflow = "unset";
   };
   //다시받아서 props set렌더링
   //1.state가 변경되는부분
