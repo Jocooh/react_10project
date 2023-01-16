@@ -12,7 +12,7 @@ import {
   ModalButton,
   ModalCloseButton,
 } from "./styles";
-import axios from "axios";
+// import axios from "axios";
 
 export default function ModalBox({ setModalOpen, title, setTitle }) {
   console.log("모달1 title props", title);
@@ -28,9 +28,9 @@ export default function ModalBox({ setModalOpen, title, setTitle }) {
   // };
 
   const [confirmFix, setConfirmFix] = useState("");
-  const [confirmArticle, setConfirmArticle] = useState("");
-  const [targetTitle, setTargetTitle] = useState(null);
-  const [editTitle, setEditTitle] = useState({ content: "" });
+  // const [confirmArticle, setConfirmArticle] = useState("");
+  // const [targetTitle, setTargetTitle] = useState(null);
+  // const [editTitle, setEditTitle] = useState({ content: "" });
 
   const handleConfirmArticle = (e) => {
     setConfirmFix(e.target.value); //비밀번호 입력값 확인 함수

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { RiSingleQuotesL } from "react-icons/ri";
 
 import {
   StyledModalBg,
@@ -13,17 +14,26 @@ import {
 
 // 댓글 수정, 삭제 눌렀을 때 뜨는 비밀번호 모달
 export default function ModalBox2({
+  selVal,
   commentList,
   setModalOpen,
-  comment,
   setCommentList,
 }) {
   //123
-
+  console.log("modalbox2 : ", commentList);
   const closeModal = () => {
     setModalOpen(false);
     document.body.style.overflow = "unset"; //모달창 클로즈 시 배경 스크롤 활성화
   };
+
+  //selVal = 1 수정
+  //selVal = 2 삭제
+
+  if (selVal === 1) {
+    console.log("수정용");
+  } else {
+    console.log("삭제용");
+  }
 
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -31,15 +41,29 @@ export default function ModalBox2({
     setConfirmPassword(e.target.value);
   };
 
-  const deleteHandler = (e) => {
-    e.preventDefault();
+  const deleteHandler = () => {
+    const passwordId = commentList.id;
+    console.log(passwordId);
+    if (confirmPassword === commentList.password) {
+      setModalOpen(false);
+      axios.delete(`http://localhost:3001/comments/${passwordId}`).then(() => {
+        axios.get("http://localhost:3001/comments").then((res) => {
+          console.log(res.data);
+          setCommentList(res.data);
+        });
+      });
+    } else {
+      alert("비밀번호를 다시 입력해주세요");
+    }
+  };
 
+  const updateHandler = () => {
     const passwordId = commentList.id;
 
     if (confirmPassword === commentList.password) {
       setModalOpen(false);
-      axios.delete(`http://localhost:3000/comments/${passwordId}`).then(() => {
-        axios.get("http://localhost:3000/comments").then((res) => {
+      axios.delete(`http://localhost:3001/comments/${passwordId}`).then(() => {
+        axios.get("http://localhost:3001/comments").then((res) => {
           console.log(res.data);
           setCommentList(res.data);
         });
@@ -58,7 +82,16 @@ export default function ModalBox2({
       <StyledModalContainer>
         <ModalCloseButton onClick={closeModal}>X</ModalCloseButton>
 
-        <StyledModalBox onSubmit={deleteHandler}>
+        <StyledModalBox
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (selVal === 1) {
+              return updateHandler;
+            } else {
+              return deleteHandler;
+            }
+          }}
+        >
           <ModalTitle>비밀번호를 입력해주세요.</ModalTitle>
           <ModalPwInput
             type="password"

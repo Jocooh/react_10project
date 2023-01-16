@@ -35,6 +35,15 @@
       "content": "d",
       "date": "2022. 12. 27. 오후 11:20:38",
       "id": 4
+    },
+    {
+      "title": "가족",
+      "userName": "조",
+      "selected": "3",
+      "pwd": "123",
+      "content": "123",
+      "date": "2022. 12. 28. 오전 10:15:37",
+      "id": 5
     }
   ],
   "comments": [
@@ -46,18 +55,32 @@
       "date": "2022. 12. 27. 오후 11:32:27"
     },
     {
-      "id": "f2063b39-2eba-4d5a-ab01-5c8a6cce4e63",
-      "postid": "1",
-      "comment": "xx",
-      "password": "xx",
-      "date": "2022. 12. 28. 오전 12:48:29"
-    },
-    {
       "id": "7a97d5f1-ad8b-4169-a066-ce1578b1deca",
       "postid": "2",
       "comment": "d",
       "password": "d",
       "date": "2022. 12. 28. 오전 1:26:43"
+    },
+    {
+      "id": "52c1db5f-be5a-4cc0-98f1-26981aac0f53",
+      "postid": "1",
+      "comment": "댓글확인",
+      "password": "123",
+      "date": "2022. 12. 28. 오전 10:01:11"
+    },
+    {
+      "id": "3acd88e2-2a5b-4a1d-b1c2-6642e0db47c4",
+      "postid": "5",
+      "comment": "123",
+      "password": "123",
+      "date": "2022. 12. 28. 오전 10:15:44"
+    },
+    {
+      "id": "461a9c5b-44ba-40de-9d0f-560911675f15",
+      "postid": "5",
+      "comment": "댓글확인",
+      "password": "123",
+      "date": "2022. 12. 28. 오전 10:23:52"
     }
   ]
 }

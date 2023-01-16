@@ -18,12 +18,16 @@ export default function CommentList({
   //selectedComments
 
   const [modalOpen, setModalOpen] = useState(false);
-  const modalHandle = (id, password) => {
+
+  const [selVal, setSelVal] = useState(0);
+  const modalHandle = (id, password, action) => {
     selectedComments?.map((item) => {
       console.log(item);
       return id === item.id ? setModalOpen(true) : console.log("응 아님");
     });
   };
+
+  useEffect(() => {}, [modalOpen]);
 
   // ul태그 밑에 li태그로 리스트들을 다 뽑아 왔어요..
   return (
@@ -37,7 +41,8 @@ export default function CommentList({
               <StyledCommentDateSpan>{item.date}</StyledCommentDateSpan>
               <RiEditBoxLine
                 onClick={() => {
-                  return modalHandle(item.id, item.password);
+                  setSelVal(1);
+                  return modalHandle(item.id, item.password, "modify");
                 }}
                 style={{
                   cursor: "pointer",
@@ -47,7 +52,8 @@ export default function CommentList({
               />
               <RiDeleteBinLine
                 onClick={() => {
-                  return modalHandle(item.id, item.password);
+                  setSelVal(2);
+                  return modalHandle(item.id, item.password, "delete");
                 }}
                 style={{
                   cursor: "pointer",
@@ -58,8 +64,9 @@ export default function CommentList({
               {modalOpen && (
                 <ModalBox2
                   setCommentList={setCommentList}
-                  commentList={item}
+                  commentList={item}  //selectedCommenet
                   setModalOpen={setModalOpen}
+                  selVal={selVal}
                 />
               )}
             </StyledCommentLiIcon>
